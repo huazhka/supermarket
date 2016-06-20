@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>超市管理系统</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/uikit.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/conflex.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/salemanage.css"/>
+
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="../image/logo.png" title="market" alt="Market"/>
+    </div><!-- end logo -->
+
+    <div class="uk-width-medium-1-3">
+        <div class="uk-panel uk-panel-box">
+            <ul class="uk-nav uk-nav-side" data-uk-nav>
+                <!--<li class="uk-active"><a href="#">Active</a></li>-->
+                <li><a href="manage.html">员工信息管理</a></li>
+                <li class="uk-parent">
+                    <a href="commanage.html">商品信息管理</a>
+                </li>
+                <li class="uk-parent">
+                    <a href="#">商品采购管理</a>
+                    <ul class="uk-nav-sub">
+                        <li><a href="warehouse.html">仓库进货</a></li>
+                        <li><a href="restock.html">仓库退货</a></li>
+                    </ul>
+                </li>
+
+                <li class="uk-parent">
+                    <a href="#">商品销售管理</a>
+                    <ul class="uk-nav-sub">
+                        <li><a href="manacommess.html">查询销售记录</a></li>
+                        <li><a href="cusretock.html">顾客退货管理</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="uk-parent">
+                    <a href="calculate.html">系统报表</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="footer clearfix">
+        <ul class="social clearfix">
+            <li><a href="index.html" class="fb" data-title="返回首页"></a></li>
+
+        </ul><!-- end social -->
+
+        <div class="rights">
+            <p>Copyright ©冯志宝 黄志康 洪佳桂 黄子芳</p>
+        </div><!-- end rights -->
+    </div ><!-- end footer -->
+</header><!-- end header -->
+<!--添加销售信息弹出框-->
+<div id="saleadd" class="uk-modal">
+    <div class="uk-modal-dialog">
+        <a class="uk-modal-close uk-close">×</a>
+        <div class="uk-modal-header">登记销售记录</div>
+        <div class="detailtitle">
+            <ul class="title12">
+                <li><label class="title2">员工编号</label></li>
+                <li><label class="title2">商品编号</label></li>
+                <li><label class="title2">商品名称</label></li>
+                <li><label class="title2">出售数量</label></li>
+                <li><label class="title2">出售日期</label></li>
+            </ul>
+        </div>
+        <div class="detailchange">
+            <ul class="title12">
+                <li>
+                    <div class="title2">
+                        <input type="text" class="form-control" name="id_mstano21" id="id_mstano21" />
+                    </div>
+                </li>
+                <li>
+                    <div class="title2">
+                        <input type="text" class="form-control" name="id_mstaname21" id="id_mstaname21" />
+                    </div>
+                </li>
+                <li>
+                    <div class="title2">
+                        <input type="text" class="form-control" name="id_mcomname21" id="id_mcomname21" />
+                    </div>
+                </li>
+                <li>
+                    <div class="title2">
+                        <input type="text" class="form-control" name="id_msaleamount21" id="id_msaleamount21" />
+                    </div>
+                </li>
+                <li>
+                    <div class="title2">
+                        <input type="text" class="form-control" name="id_msaledate21" id="id_msaledate21"/>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="uk-modal-footer">
+            <input type="button" class="button" name="sure" onclick="sure61()" value="确定"/>
+            <input type="button" class="button" name="cancel" onclick="display61()" value="取消"/>
+        </div>
+    </div>
+</div>
+</div>
+<!--修改销售信息弹出框-->
+<div id="salechange" class="uk-modal">
+    <div class="uk-modal-dialog">
+        <a class="uk-modal-close uk-close">×</a>
+        <div class="uk-modal-header">销售信息修改</div>
+        <div class="detailtitle">
+            <ul class="title12">
+                <li><label class="title2">员工编号</label></li>
+                <li><label class="title2">商品编号</label></li>
+                <li><label class="title2">商品名称</label></li>
+                <li><label class="title2">出售数量</label></li>
+                <li><label class="title2">出售日期</label></li>
+            </ul>
+        </div>
+        <div class="detailshow">
+            <ul class="title12">
+                <li><label class="title2" id="id_mstano22">10328372</label></li>
+                <li><label class="title2" id="id_mstaname22">39290193</label></li>
+                <li><label class="title2" id="id_mcomname22">越南挂耳式咖啡</label></li>
+                <li><label class="title2" id="id_msaleamount22">392</label></li>
+                <li><label class="title2" id="id_msaledate22">1994-12-31</label></li>
+            </ul>
+        </div>
+        <div class="detailchange">
+            <ul class="title12">
+                <li>
+                    <div class="title2">
+                    <input type="text" class="form-control" name="id_mstano21" id="id_mstano21" />
+                    </div>
+                </li>
+                <li>
+                    <div class="title2">
+                        <input type="text" class="form-control" name="id_mstaname21" id="id_mstaname21" />
+                    </div>
+                </li>
+                <li>
+                    <div class="title2">
+                        <input type="text" class="form-control" name="id_mcomname21" id="id_mcomname21" />
+                    </div>
+                </li>
+                <li>
+                    <div class="title2">
+                        <input type="text" class="form-control" name="id_msaleamount21" id="id_msaleamount21" />
+                    </div>
+                </li>
+                <li>
+                    <div class="title2">
+                        <input type="text" class="form-control" name="id_msaledate21" id="id_msaledate21"/>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="uk-modal-footer">
+            <input type="button" class="button" id="sure" onclick="sure62()" value="确定"/>
+            <input type="button" class="button" id="cancel" onclick="display62()" value="取消"/>
+        </div>
+    </div>
+</div>
+</div>
+<!--Main-->
+<div class="mainmanage">
+    <div class="blank"></div>
+    <div class="salsearch">
+        <div class="title">
+            <label class="title1">员工编号</label>
+            <label class="title1">商品名称</label>
+            <label class="title1">商品编号</label>
+            <!--				<label class="title3">商品类型</label>-->
+            <label class="title4">销售状态</label>
+            <label class="title4">销售数量</label>
+        </div>
+        <div class="allsearch">
+            <div class="controls2 title1">
+                <input type="text" name="id_mstano2"/>
+            </div>
+
+            <div class="controls2 title1">
+                <input type="text" name="id_comname" placeholder="如：雨伞"/>
+            </div>
+
+            <div class="controls2 title1">
+                <input type="text" name="id_comno" placeholder="如：001"/>
+            </div>
+
+            <div class="title4">
+                <input type="radio"  name="id_state" value="1" checked="checked"/>已售出
+                <input type="radio"  name="id_state" value="2"/>退货
+            </div>
+
+            <div class="title4">
+                <input type="text" name="id_saleamount" id="id_saleamount1" />
+                -
+                <input type="text" name="id_saleamount" id="id_saleamount2" />
+            </div>
+        </div>
+        <br>
+        <div class="comsearch2">
+            <form class="uk-form">
+                <span>售出时间：</span>
+                <input type="radio"  name="id_saledate" value="1" checked="checked"/>今天
+                <input type="radio"  name="id_saledate" value="2"/>近一个星期
+                <input type="radio"  name="id_saledate" value="3"/>近一个月
+            </form>
+            <form class="uk-form">
+                <input type="checkbox" value="全部记录"/>
+                <span>全部商品</span>
+            </form>
+            <input type="button" class="button" name="sure" value="查询"/>
+            <input type="button" class="button" name="sure" data-uk-modal="{target:'#saleadd'}" value="登记"/>
+        </div>
+    </div>
+    <!--输出查询结果-->
+    <div class="sale_print">
+        <!--输出表头-->
+        <ul class="title">
+            <li><label class="title1">员工编号</label></li>
+            <li><label class="title1">商品编号</label></li>
+            <li><label class="title4">商品名称</label></li>
+            <li><label class="title1">出售数量</label></li>
+            <li><label class="title1">出售日期</label></li>
+        </ul>
+        <!--查询结果-->
+        <div id="showstaff">
+        <ul class="title">
+            <li><label class="title1" id="id_mstano1">10390872</label></li>
+            <li><label class="title1" id="id_ssaleno">10328372</label></li>
+            <li><label class="title4" id="id_scomname">越南挂耳式咖啡</label></li>
+            <li><label class="title1" id="id_ssaleamount">15</label></li>
+            <li><label class="title1" id="id_ssaledate">2016-5-30</label></li>
+            <li class="title1">
+                <input type="button" class="button" name="change" data-uk-modal="{target:'#salechange'}" value="修改"/>
+                <input type="button" class="button" name="delete" onclick="display2()" value="删除"/>
+            </li>
+        </ul>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/uikit.min.js"></script>
+</body>
+</html>
