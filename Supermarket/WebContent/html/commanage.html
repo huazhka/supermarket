@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>超市管理系统</title>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="../css/uikit.min.css"/>
+<link rel="stylesheet" type="text/css" href="../css/conflex.css"/>
+<link rel="stylesheet" type="text/css" href="../css/commanage.css"/>
+
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="../image/logo.png" title="market" alt="Market"/>
+    </div><!-- end logo -->
+
+    <div class="uk-width-medium-1-3">
+        <div class="uk-panel uk-panel-box">
+            <ul class="uk-nav uk-nav-side" data-uk-nav>
+                <!--<li class="uk-active"><a href="#">Active</a></li>-->
+                <li><a href="manage.html">员工信息管理</a></li>
+                <li class="uk-parent">
+                    <a href="commanage.html">商品信息管理</a>
+                </li>
+                <li class="uk-parent">
+                    <a href="#">商品采购管理</a>
+                    <ul class="uk-nav-sub">
+                        <li><a href="warehouse.html">仓库进货</a></li>
+                        <li><a href="restock.html">仓库退货</a></li>
+                    </ul>
+                </li>
+
+                <li class="uk-parent">
+                    <a href="#">商品销售管理</a>
+                    <ul class="uk-nav-sub">
+                        <li><a href="manacommess.html">查询销售记录</a></li>
+                        <li><a href="cusretock.html">顾客退货管理</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="uk-parent">
+                    <a href="calculate.html">系统报表</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+        
+        
+		<div class="footer clearfix">
+			<ul class="social clearfix">
+				<li><a href="index.html" class="fb" data-title="返回首页"></a></li>
+
+			</ul><!-- end social -->
+
+			<div class="rights">
+				<p>Copyright ©冯志宝 黄志康 洪佳桂 黄子芳</p>
+			</div><!-- end rights -->
+		</div ><!-- end footer -->
+	</header><!-- end header -->
+<!-- 类别修改对话框 -->
+<div id="sortchange" class="uk-modal">
+    <div class="uk-modal-dialog">
+        <a class="uk-modal-close uk-close"></a>
+        <div class="uk-modal-header">商品类型名称修改</div>
+        <div class="title">
+        <ul class="controls2">
+            <li><label class="title4">原类型名称：</label>
+                <label class="title1" id="id_sortname1">零食</label>
+            </li>
+            <li><label class="title4">名称更改为：</label>
+                <input type="text" class="title1" id="id_sortname2" />
+            </li>
+            <li>
+                <div class="title7">
+                <input type="button" class="button" name="sure" onclick="sure311()" value="确定"/></div>
+                <div class="title7">
+                <input type="button" class="button" name="cancel" onclick="display311()" value="取消"/></div>
+            </li>
+        </ul>
+        </div>
+    </div>
+</div>
+<!-- 添加类别对话框 -->
+<div id="sortadd" class="uk-modal">
+    <div class="limit">
+    <div class="uk-modal-dialog">
+        <a class="uk-modal-close uk-close"></a>
+        <div class="uk-modal-header">添加商品类型</div>
+        <div class="title">
+            <ul class="controls2">
+                <li><label class="title4">商品类别名称：</label>
+                    <input type="text" class="title1" id="id_sortname3" />
+                </li>
+                <li>
+                    <div class="title7">
+                        <input type="button" class="button" name="sure" onclick="sure312()" value="确定"/></div>
+                    <div class="title7">
+                        <input type="button" class="button" name="cancel" onclick="display312()" value="取消"/></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </div>
+</div>
+<!--添加商品信息弹出框-->
+<div id="comessadd" class="uk-modal">
+    <div class="limit">
+        <div class="uk-modal-dialog">
+            <a class="uk-modal-close uk-close">×</a>
+            <div class="uk-modal-header">添加商品信息</div>
+            <div class="detailtitle">
+                <ul class="title11">
+                    <li><label class="title8">商品名称</label></li>
+                    <li><label class="title2">商品类别</label></li>
+                    <li><label class="title2">商品单价</label></li>
+                </ul>
+            </div>
+            <div class="detailchange">
+                <ul class="title11">
+                    <li>
+                        <div class="title8">
+                            <input type="text" class="form-control" name="id_comno" id="id_comno2" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="controls2">
+                            <select class="title2" name="id_sortno">
+                                <option>请选择</option>
+                                <option>小吃</option>
+                                <option>家具</option>
+                                <option>衣物</option>
+                                <option>玩具</option></select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title2">
+                            <input type="text" class="form-control" name="id_price" id="id_price2" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="uk-modal-footer">
+                <input type="button" class="button" id="sure" onclick="sure41()" value="确定"/>
+                <input type="button" class="button" id="cancel" onclick="display41()" value="取消"/>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--修改商品信息弹出框-->
+<div id="comesschange" class="uk-modal">
+    <div class="limit">
+    <div class="uk-modal-dialog">
+        <a class="uk-modal-close uk-close">×</a>
+        <div class="uk-modal-header">商品信息修改</div>
+        <div class="detailtitle">
+            <ul class="title11">
+                <li><label class="title8">商品名称</label></li>
+                <li><label class="title2">商品类别</label></li>
+                <li><label class="title2">商品单价</label></li>
+            </ul>
+        </div>
+        <div class="detailshow">
+            <ul class="title11">
+                <li><label class="title8" id="id_comno1">越南挂耳式咖啡</label></li>
+                <li><label class="title2" id="id_sortno3">小吃</label></li>
+                <li><label class="title2" id="id_price1">68.00</label></li>
+            </ul>
+        </div>
+        <div class="detailchange">
+            <ul class="title11">
+                <li>
+                    <div class="title8">
+                        <input type="text" class="form-control" name="id_comno" id="id_comno2" />
+                    </div>
+                </li>
+                <li>
+                    <div class="controls2">
+                        <select class="title2" name="id_sortno">
+                            <option>请选择</option>
+                            <option>小吃</option>
+                            <option>家具</option>
+                            <option>衣物</option>
+                            <option>玩具</option></select>
+                    </div>
+                </li>
+                <li>
+                    <div class="title2">
+                        <input type="text" class="form-control" name="id_price" id="id_price2" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="uk-modal-footer">
+            <input type="button" class="button" id="sure" onclick="sure42()" value="确定"/>
+            <input type="button" class="button" id="cancel" onclick="display42()" value="取消"/>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
+<!--查询页面-->
+<div class="mainmanage">
+    <div class="blank"></div>
+	<div class="head">
+    	<div class="head-content">
+        <ul class="" data-uk-switcher="{connect:'#run'}">
+		    <li><a href=""><h2>商品类别</h2></a></li>
+		    <li><a href=""><h2>商品信息</h2></a></li>
+        </ul>
+        </div>
+	</div>
+    <div class="change">
+		<ul id="run" class="uk-switcher">
+		<!--商品类别-->
+		<li>
+        <div class="comsort">
+			<div class="comsearch1">
+				<div class="saletitle">
+					<ul class="controls2">
+						<li><label class="title4">商品类别编号</label></li>
+						<li><input type="text" class="title2" id="id_sortno1" /></li>
+						<li><label class="title4"><input type="checkbox"/>全部类别</label></li>
+						<li class="title4"><input type="button" class="button" name="sure" value="搜索"/>
+                            <input type="button" class="button" name="sure" data-uk-modal="{target:'#sortadd'}" value="添加"/>
+                        </li>
+					</ul>
+				</div>
+            </div>
+				<div class="com_print">
+                    <!--输出表头-->
+					<ul class="title12">
+						<li><label class="title4">商品类别编号</label></li>
+						<li><label class="title4">商品类别名称</label></li>
+					</ul>
+                    <!--输出搜索结果-->
+                    <div  id="ss_print">
+					<ul class="title12">
+						<li><label class="title4" id="id_sortno2">104</label></li>
+						<li><label class="title4" id="id_sortname">零食</label></li>
+                        <li><input type="button" class="button" name="sure" data-uk-modal="{target:'#sortchange'}" value="修改"/>
+                            <input type="button" class="button" name="delete" onclick="display31()" value="删除"/>
+                        </li>
+					</ul>
+                    </div>
+				</div>
+			</div>
+        </li>
+            <!--商品信息增删查改-->
+			<li>
+                <div class="comsearch">
+                    <div class="title11">
+                        <ul class="controls2">
+                            <li><label class="title1">商品名称</label></li>
+                            <li><label class="title2">商品编号</label></li>
+                            <li><label class="title3">商品类型</label></li>
+                            <li><label class="title4">价格区间</label></li>
+                            <li><label class="title5"><input type="checkbox"/>全部商品</label>
+                        </ul>
+                    </div>
+                    <div class="title11">
+                        <ul class="controls2">
+                            <li class="title1"><input type="text" name="id_comname" placeholder="如：雨伞"/></li>
+                            <li class="title2"><input type="text" name="id_comno" placeholder="如：001"/></li>
+                            <li>
+                                <select class="title3" name="id_sortno">
+                                    <option>请选择</option>
+                                    <option>小吃</option>
+                                    <option>家具</option>
+                                    <option>衣物</option>
+                                    <option>玩具</option></select>
+                            </li>
+                            <li class="title4">
+                                <input type="text" name="id_comno" placeholder="￥"/>
+                                -
+                                <input type="text" name="id_comno" placeholder="￥"/>
+                            </li>
+                            <li class="title5"><input type="button" class="button" name="sure" data-uk-modal="{target:'#comessadd'}" value="添加"/>
+                                <input type="button" class="button" name="sure" value="搜索"/></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--输出查询结果-->
+                <div class="com_print">
+                    <!--输出表头-->
+                    <ul class="title">
+                        <li><label class="title1">商品编号</label></li>
+                        <li><label class="title4">商品名称</label></li>
+                        <li><label class="title1">商品单价</label></li>
+                        <li><label class="title1">商品类别</label></li>
+                        <li><label class="title1">库存数量</label></li>
+
+                    </ul>
+                    <!--查询结果-->
+                    <div id="printlight">
+                    <ul class="title">
+                        <li><label class="title1" id="id_ccomno">10328372</label></li>
+                        <li><label class="title4" id="id_ccomname">越南挂耳式咖啡</label></li>
+                        <li><label class="title1" id="id_cprice">18.00</label></li>
+                        <li><label class="title1" id="id_csortno">小吃</label></li>
+                        <li><label class="title1" id="id_cwareamount">324</label></li>
+                        <li><div class="title1"><input type="button" class="button" name="sure" data-uk-modal="{target:'#comesschange'}" value="修改"/>
+                            <input type="button" class="button" name="delete" onclick="display3()" value="删除"/></div>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/uikit.min.js"></script>
+</body>
+</html>
