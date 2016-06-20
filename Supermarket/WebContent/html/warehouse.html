@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>超市管理系统</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/uikit.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/conflex.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/warehouse.css"/>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="../image/logo.png" title="market" alt="Market"/>
+    </div><!-- end logo -->
+
+    <div class="uk-width-medium-1-3">
+        <div class="uk-panel uk-panel-box">
+            <ul class="uk-nav uk-nav-side" data-uk-nav>
+                <!--<li class="uk-active"><a href="#">Active</a></li>-->
+                <li><a href="manage.html">员工信息管理</a></li>
+                <li class="uk-parent">
+                    <a href="commanage.html">商品信息管理</a>
+                </li>
+                <li class="uk-parent">
+                    <a href="#">商品采购管理</a>
+                    <ul class="uk-nav-sub">
+                        <li><a href="warehouse.html">仓库进货</a></li>
+                        <li><a href="restock.html">仓库退货</a></li>
+                    </ul>
+                </li>
+
+                <li class="uk-parent">
+                    <a href="#">商品销售管理</a>
+                    <ul class="uk-nav-sub">
+                        <li><a href="manacommess.html">查询销售记录</a></li>
+                        <li><a href="cusretock.html">顾客退货管理</a></li>
+                    </ul>
+                </li>
+
+                <li class="uk-parent">
+                    <a href="calculate.html">系统报表</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="footer clearfix">
+        <ul class="social clearfix">
+            <li><a href="index.html" class="fb" data-title="返回首页"></a></li>
+
+        </ul><!-- end social -->
+
+        <div class="rights">
+            <p>Copyright ©冯志宝 黄志康 洪佳桂 黄子芳</p>
+        </div><!-- end rights -->
+    </div ><!-- end footer -->
+</header><!-- end header -->
+<!--添加信息弹出框-->
+<div id="amountadd" class="uk-modal">
+    <div class="limit">
+    <div class="uk-modal-dialog">
+        <a class="uk-modal-close uk-close">×</a>
+        <div class="uk-modal-header">添加员工信息</div>
+        <div class="detailtitle">
+            <ul class="title11">
+                    <li><label class="title2">进货编号</label></li>
+                    <li><label class="title2">商品编号</label></li>
+                    <li><label class="title2">员工编号</label></li>
+                    <li><label class="title2">进货数量</label></li>
+            </ul>
+        </div>
+        <div class="detailchange">
+            <ul class="title11">
+                <li>
+                    <div class="title2">
+                        <input type="text" class="form-control" name="id_stono" id="id_stono6" placeholder="不超过8个字符"/>
+                    </div>
+                </li>
+                <li>
+                    <div class="title2">
+                        <input type="text" class="form-control" name="id_scomno" id="id_scomno6" placeholder="如：黄志康"/>
+                    </div>
+                </li>
+                <li>
+                    <div class="title2">
+                        <input type="text" class="form-control" name="id_sstano" id="id_sstano6" placeholder="不超过20个字符"/>
+                    </div>
+                </li>
+                <li>
+                    <div class="title2">
+                        <input type="text" class="form-control" name="id_sstoamount" id="id_sstoamount" placeholder="不超过10个字符"/>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="uk-modal-footer">
+            <input type="button" class="button" name="sure" onclick="sure51()" value="确定"/>
+            <input type="button" class="button" name="cancel" onclick="display51()" value="取消"/>
+        </div>
+    </div>
+    e</div>
+</div>
+</div>
+
+<!--查询页面-->
+<div class="mainmanage">
+    <div class="blank"></div>
+    <div class="stasearch">
+        <div class="searchset">
+            <ul class="searchset2">
+                <li><label class="title1">员工编号</label></li>
+                <li><label class="title1">商品编号</label></li>
+                <li><label class="title1">进货日期</label></li>
+                <li><label class="title1"><input type="checkbox"/>全部记录</label></li>
+            </ul>
+        </div>
+        </ul class="searchset1">
+        <ul class="searchset1">
+            <li>
+                <div class="title1">
+                    <input type="text" class="form-control" name="stano" id="id_stano5" placeholder="如：12345678"/>
+                </div>
+            </li>
+            <li>
+                <div class="title1">
+                    <input type="text" class="form-control" name="comno" id="id_comno5" />
+                </div>
+            </li>
+            <li>
+                <div class="title1">
+                    <input type="text" class="form-control" name="stodate" id="id_stodate1" />
+                </div>
+            </li>
+            <li><input type="button" class="button" name="sure" value="搜索"/>
+                <input type="button" class="button" name="sure" data-uk-modal="{target:'#amountadd'}" value="进货"/>
+            </li>
+        </ul>
+    </div>
+
+    <!--输出查询结果-->
+    <div class="sale_print">
+        <!--输出表头-->
+        <ul class="title">
+            <li><label class="title1">进货编号</label></li>
+            <li><label class="title1">商品编号</label></li>
+            <li><label class="title1">员工编号</label></li>
+            <li><label class="title1">进货数量</label></li>
+            <li><label class="title1">进货日期</label></li>
+        </ul>
+        <!--查询结果-->
+        <div id="showaddcom">
+            <ul class="title">
+                <li><label class="title1" id="id_stono">10328372</label></li>
+                <li><label class="title1" id="id_scomno1">29309829</label></li>
+                <li><label class="title1" id="id_sstano1">93082830</label></li>
+                <li><label class="title1" id="id_sstoamount1">139</label></li>
+                <li><label class="title1" id="id_sstodate1">2016-4-8</label></li>
+                <li>
+                    <input type="button" class="button" name="delete" onclick="display511()" value="删除"/>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/uikit.min.js"></script>
+</body>
+</html>

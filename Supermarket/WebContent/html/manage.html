@@ -6,7 +6,11 @@
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="../css/uikit.min.css"/>
 <link rel="stylesheet" type="text/css" href="../css/manage.css"/>
-
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/uikit.min.js"></script>
+<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../ajax/managestaff.js"></script>
 </head>
 
 <body>
@@ -20,46 +24,30 @@
         	<div class="uk-panel uk-panel-box">
                 <ul class="uk-nav uk-nav-side" data-uk-nav>
                 	<!--<li class="uk-active"><a href="#">Active</a></li>-->
-                    <li><a href="#">员工信息管理</a></li>
+                    <li><a href="manage.html">员工信息管理</a></li>
                     <li class="uk-parent">
-                    	<a href="#">商品信息管理</a>
-                    	<ul class="uk-nav-sub">
-                        	<li><a href="#">商品类别</a></li>
-                            <li><a href="#">商品信息</a></li>
+                        <a href="commanage.html">商品信息管理</a>
+                    </li>
+                    <li class="uk-parent">
+                        <a href="#">商品采购管理</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="warehouse.html">仓库进货</a></li>
+                            <li><a href="restock.html">仓库退货</a></li>
                         </ul>
-                     </li>
-                     <li class="uk-parent">
-                     	<a href="#">商品采购管理</a>
-                     	<ul class="uk-nav-sub">
-                        	<li><a href="#">仓库进货</a></li>
-                       		<li><a href="#">仓库退货</a></li>
+                    </li>
+
+                    <li class="uk-parent">
+                        <a href="#">商品销售管理</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="manacommess.html">查询销售记录</a></li>
+                            <li><a href="cusretock.html">顾客退货管理</a></li>
                         </ul>
-                     </li>
-                    
-                     <li class="uk-parent">
-                     	<a href="#">商品销售管理</a>
-                     	<ul class="uk-nav-sub">
-                        	<li><a href="#">查询销售记录</a></li>
-                       		<li><a href="#">顾客退货登记</a></li>
-                            <li><a href="#">查询退货记录</a></li>
-                        </ul>   
-                     </li>
-                     
-<!--                     <li class="uk-parent">
-                     	<a href="#">库存管理</a>
-                     	<ul class="uk-nav-sub">
-                        	<li><a href="#">查询库存</a></li>
-                       		<li><a href="#">库存警报</a></li>
-                        </ul>
-                     </li>-->
-                     
-                     <li class="uk-parent">
-                     	<a href="#">系统报表</a>
-                     	<ul class="uk-nav-sub">
-                        	<li><a href="#">员工销售报表</a></li>
-                       		<li><a href="#">供应商进退货</a></li>
-                        </ul>
-                     </li>
+                    </li>
+
+
+                    <li class="uk-parent">
+                        <a href="calculate.html">系统报表</a>
+                    </li>
                         
                  </ul>
              </div>
@@ -84,7 +72,7 @@
     <div class="uk-modal-header">添加员工信息</div> 
         <div class="detailtitle">
     	<ul class="title11">
-            <li><label class="title2">员工编号</label></li>
+           <!--  <li><label class="title2">员工编号</label></li> -->
             <li><label class="title2">员工姓名</label></li>
             <li><label class="title2">员工帐号</label></li>
             <li><label class="title2">员工密码</label></li>
@@ -92,11 +80,11 @@
     	</div>
         <div class="detailchange">
         	<ul class="title11">
-        	<li>
+        	<!-- <li>
             	<div class="title2">
                 <input type="text" class="form-control" name="id_dstano" id="id_cstano" placeholder="不超过8个字符"/>
                 </div>
-            </li>
+            </li> -->
             <li>
             	<div class="title2">
                 <input type="text" class="form-control" name="id_cstano" id="id_cstaname" placeholder="如：黄志康"/>
@@ -118,7 +106,7 @@
     	<ul class="title11">
             <li><label class="title2">性别</label></li>            
             <li><label class="title2">联系电话</label></li>
-            <li><label class="title2">账户身份</label></li>
+            <!-- <li><label class="title2">账户身份</label></li> -->
             <li><label class="title2">出生日期</label></li>
         </ul>   
     	</div>
@@ -126,8 +114,10 @@
         	<ul class="title11">
             <li>
             	<div class="title2">
+            		<form id="insertradio" action="#">
 						<input type="radio"  name="id_dsex" id="id_csex" value="1" />男
 		            	<input type="radio"  name="id_dsex" id="id_csex" value="2"/>女
+		            </form>
 		    	</div>
             </li>
             <li>
@@ -135,12 +125,12 @@
                 <input type="text" class="form-control" name="id_dtele" id="id_ctele" placeholder=""/>
             	</div>
             </li>    
-            <li>
+           <!--  <li>
             	<div class="title2">
 						<input type="radio"  name="id_dauthority" id="id_cdauthority" value="1" />管理员
 		            	<input type="radio"  name="id_dauthority" id="id_cdauthority" value="2"/>员工
 		    	</div>
-            </li>
+            </li> -->
             <li>
             	<div class="title2">
                 <input type="text" class="form-control" name="id_dbirthday" id="id_dbirthday"/>
@@ -149,7 +139,7 @@
             </ul>
     	</div>
         <div class="uk-modal-footer">
-             <input type="button" class="button" name="sure" onclick="sure1()" value="确定"/>
+             <input type="button" class="button" name="sure" id="insert" onclick="sure1()" value="确定"/>
              <input type="button" class="button" name="cancel" onclick="display1()" value="取消"/>
         </div>
 	</div>
@@ -212,17 +202,17 @@
             <li><label class="title2">出生日期</label></li>
         </ul>  
     	</div>
-		<div class="detailshow">
+	<!-- 	<div class="detailshow">
     	<ul class="title11">
-<!--    		<li><label class="title2" id="id_dstano">10328372</label></li>
--->        	<li><label class="title2" id="id_dstaname">黄志康</label></li>
-<!--        	<li><label class="title2" id="id_daccount">huangzhikang</label></li>
--->        	<li><label class="title2" id="id_dpwd">10328372</label></li> 
+   		<li><label class="title2" id="id_dstano">10328372</label></li>
+        	<li><label class="title2" id="id_dstaname">黄志康</label></li>
+       	<li><label class="title2" id="id_daccount">huangzhikang</label></li>
+        	<li><label class="title2" id="id_dpwd">10328372</label></li> 
 			<li><label class="title2" id="id_dsex">女</label></li>
             <li><label class="title2" id="id_dtele">18456143795</label></li>
         	<li><label class="title2" id="id_dbirthday">1994-12-31</label></li>
         </ul>
-        </div>
+        </div> -->
         <div class="detailchange">
         	<ul class="title11">
 <!--        	<li>
@@ -280,14 +270,14 @@
             <li><label class="title1">员工编号</label></li>
             <li><label class="title1">员工姓名</label></li>
             <li><label class="title1">员工帐号</label></li>
-            <li><label class="title1"><input type="checkbox"/>全部员工</label></li>
+            <li><label class="title1"><input type="checkbox" id="staffall"/>全部员工</label></li>
         </ul>   
         </div>
         </ul class="searchset1">
 		<ul class="searchset1">
             <li>
             	<div class="title1">
-            	<input type="text" class="form-control" name="stano" id="id_stano1" placeholder="如：12345678"/>
+            	<input type="text" class="form-control" name="stano" id="id_stano1" placeholder="如：123"/>
                 </div>
             </li>
             <li>
@@ -300,7 +290,7 @@
                 <input type="text" class="form-control" name="account" id="id_account1" />
                 </div>
             </li>
-            <li><input type="button" class="button" name="sure" value="搜索"/>
+            <li><input type="button" class="button" name="sure" id="seekstaff" value="搜索"/>
             	<input type="button" class="button" name="sure" data-uk-modal="{target:'#staffadd'}" value="添加"/>
             </li>
         </ul>
@@ -317,7 +307,7 @@
         </ul>
         <!--查询结果-->
         <div id="showstaff">
-        <ul class="title">
+       <ul class="title">
         <li><label class="title1" id="id_pstano">10328372</label></li>
         <li><label class="title1" id="id_pstaname">黄志康</label></li>
         <li><label class="title2" id="id_paccount">huangzhikang</label></li>
@@ -327,13 +317,10 @@
             <input type="button" class="button" name="delete" onclick="display2()" value="删除"/>
         </li>
         </ul>
+        
         </div>
 	</div>
     </div>
 </div>
-
-<script type="text/javascript" src="../js/jquery.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" src="../js/uikit.min.js"></script>
 </body>
 </html>

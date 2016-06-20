@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>超市管理系统</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/uikit.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/conflex.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/warehouse.css"/>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="../image/logo.png" title="market" alt="Market"/>
+    </div><!-- end logo -->
+
+    <div class="uk-width-medium-1-3">
+        <div class="uk-panel uk-panel-box">
+            <ul class="uk-nav uk-nav-side" data-uk-nav>
+                <!--<li class="uk-active"><a href="#">Active</a></li>-->
+                <li><a href="manage.html">员工信息管理</a></li>
+                <li class="uk-parent">
+                    <a href="commanage.html">商品信息管理</a>
+                </li>
+                <li class="uk-parent">
+                    <a href="#">商品采购管理</a>
+                    <ul class="uk-nav-sub">
+                        <li><a href="warehouse.html">仓库进货</a></li>
+                        <li><a href="restock.html">仓库退货</a></li>
+                    </ul>
+                </li>
+
+                <li class="uk-parent">
+                    <a href="#">商品销售管理</a>
+                    <ul class="uk-nav-sub">
+                        <li><a href="manacommess.html">查询销售记录</a></li>
+                        <li><a href="cusretock.html">顾客退货管理</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="uk-parent">
+                    <a href="calculate.html">系统报表</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="footer clearfix">
+        <ul class="social clearfix">
+            <li><a href="index.html" class="fb" data-title="返回首页"></a></li>
+
+        </ul><!-- end social -->
+
+        <div class="rights">
+            <p>Copyright ©冯志宝 黄志康 洪佳桂 黄子芳</p>
+        </div><!-- end rights -->
+    </div ><!-- end footer -->
+</header><!-- end header -->
+<!-- 详细信息弹出框 -->
+<div id="restockdetail" class="uk-modal">
+    <div class="uk-modal-dialog">
+        <a class="uk-modal-close uk-close"><img src="×.png" alt="关闭"/></a>
+        <div class="uk-modal-header">退货记录详细</div>
+        <div class="detailtitle">
+            <ul class="title11">
+                <li><label class="title2">退货编号</label></li>
+                <li><label class="title2">商品编号</label></li>
+                <li><label class="title2">员工编号</label></li>
+                <li><label class="title2">退仓数量</label></li>
+                <li><label class="title2">退货日期</label> </li>
+            </ul>
+        </div>
+        <div class="detailchange">
+            <div class="datailtitle">
+                <ul class="title11">
+                    <li><label class="title2" id="id_resno3">10328372</label></li>
+                    <li><label class="title2" id="id_rcomno2">29309829</label></li>
+                    <li><label class="title2" id="id_rstano2">93082830</label></li>
+                    <li><label class="title2" id="id_reamount2">139</label></li>
+                    <li><label class="title2" id="id_sstodate1">2016-4-8</label></li>
+                </ul>
+            </div>
+        </div>
+        <div class="detailchange">
+            <div class="datailtitle">
+                <ul class="title11">
+                    <li><label class="title2">退货理由</label></li>
+                    <li><label class="title6" id="id_reason1">食品防腐剂过量，收到食品监察局通知停卖此产品</label></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+<!--添加信息弹出框-->
+<div id="restockadd" class="uk-modal">
+    <!--<div class="limit">-->
+        <div class="uk-modal-dialog">
+            <a class="uk-modal-close uk-close">×</a>
+            <div class="uk-modal-header">登记仓库退货信息</div>
+            <div class="detailtitle">
+                <ul class="title11">
+                    <li><label class="title2">退货编号</label></li>
+                    <li><label class="title2">商品编号</label></li>
+                    <li><label class="title2">员工编号</label></li>
+                    <li><label class="title2">退货数量</label></li>
+                    <li><label class="title2">退货日期</label> </li>
+                </ul>
+            </div>
+            <div class="detailchange">
+                <ul class="title11">
+                    <li>
+                        <div class="title2">
+                            <input type="text" class="form-control" name="id_resno" id="id_resno5" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title2">
+                            <input type="text" class="form-control" name="id_rcomno" id="id_rcomno5" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title2">
+                            <input type="text" class="form-control" name="id_rstano" id="id_rstano6" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title2">
+                            <input type="text" class="form-control" name="id_reamount" id="id_reamount7" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title2">
+                            <input type="text" class="form-control" name="id_reamount4" id="id_reamount5" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="detailchange">
+                <ul class="title11">
+                    <li><label class="title2">退货理由</label></li></ul>
+                    <textarea rows="2" cols="50" class="form-control">请输入少于100字的退货理由</textarea>
+
+            </div>
+            <div class="uk-modal-footer">
+                <input type="button" class="button" name="sure" onclick="sure52()" value="确定"/>
+                <input type="button" class="button" name="cancel" onclick="display52()" value="取消"/>
+            </div>
+        </div>
+        e</div>
+</div>
+</div>
+
+<!--查询页面-->
+<div class="mainmanage">
+    <div class="blank"></div>
+    <div class="stasearch">
+        <div class="searchset">
+            <ul class="searchset2">
+                <li><label class="title1">员工编号</label></li>
+                <li><label class="title1">商品编号</label></li>
+                <li><label class="title1">退货日期</label></li>
+                <li><label class="title1"><input type="checkbox"/>全部记录</label></li>
+            </ul>
+        </div>
+        </ul class="searchset1">
+        <ul class="searchset1">
+            <li>
+                <div class="title1">
+                    <input type="text" class="form-control" name="stano" id="id_stano8" placeholder="如：12345678"/>
+                </div>
+            </li>
+            <li>
+                <div class="title1">
+                    <input type="text" class="form-control" name="comno" id="id_comno8" />
+                </div>
+            </li>
+            <li>
+                <div class="title1">
+                    <input type="text" class="form-control" name="redate" id="id_redate1" />
+                </div>
+            </li>
+            <li><input type="button" class="button" name="sure" value="搜索"/>
+                <input type="button" class="button" name="sure" data-uk-modal="{target:'#restockadd'}" value="登记"/>
+            </li>
+        </ul>
+    </div>
+
+    <!--输出查询结果-->
+    <div class="sale_print">
+        <!--输出表头-->
+        <ul class="title">
+            <li><label class="title1">退货编号</label></li>
+            <li><label class="title1">商品编号</label></li>
+            <li><label class="title1">员工编号</label></li>
+            <li><label class="title1">退仓数量</label></li>
+            <!--<li><label class="title1">退货日期</label></li>-->
+        </ul>
+        <!--查询结果-->
+        <div id="showstaff2">
+            <ul class="title">
+                <li><label class="title1" id="id_resno2">10328372</label></li>
+                <li><label class="title1" id="id_rcomno1">29309829</label></li>
+                <li><label class="title1" id="id_rstano1">93082830</label></li>
+                <li><label class="title1" id="id_reamount1">139</label></li>
+                <!--<li><label class="title1" id="id_sstodate1">2016-4-8</label></li>-->
+                <li>
+                    <input type="button" class="button" name="detail" data-uk-modal="{target:'#restockdetail'}" value="详情"/>
+                    <input type="button" class="button" name="delete" onclick="display521()" value="删除"/>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/uikit.min.js"></script>
+</body>
+</html>
