@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>超市管理系统</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/uikit.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/conflex.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/calculate.css"/>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="../image/logo.png" title="market" alt="Market"/>
+    </div><!-- end logo -->
+
+    <div class="uk-width-medium-1-3">
+        <div class="uk-panel uk-panel-box">
+            <ul class="uk-nav uk-nav-side" data-uk-nav>
+                <!--<li class="uk-active"><a href="#">Active</a></li>-->
+                <li><a href="manage.html">员工信息管理</a></li>
+                <li class="uk-parent">
+                    <a href="commanage.html">商品信息管理</a>
+                </li>
+                <li class="uk-parent">
+                    <a href="#">商品采购管理</a>
+                    <ul class="uk-nav-sub">
+                        <li><a href="warehouse.html">仓库进货</a></li>
+                        <li><a href="restock.html">仓库退货</a></li>
+                    </ul>
+                </li>
+
+                <li class="uk-parent">
+                    <a href="#">商品销售管理</a>
+                    <ul class="uk-nav-sub">
+                        <li><a href="manacommess.html">查询销售记录</a></li>
+                        <li><a href="cusretock.html">顾客退货管理</a></li>
+                    </ul>
+                </li>
+
+                <li class="uk-parent">
+                    <a href="calculate.html">系统报表</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="footer clearfix">
+        <ul class="social clearfix">
+            <li><a href="index.html" class="fb" data-title="返回首页"></a></li>
+
+        </ul><!-- end social -->
+
+        <div class="rights">
+            <p>Copyright ©冯志宝 黄志康 洪佳桂 黄子芳</p>
+        </div><!-- end rights -->
+    </div ><!-- end footer -->
+</header><!-- end header -->
+<div class="mainmanage">
+    <div class="top_table">
+        <div class="print_table" id="part1"></div>
+        <div class="print_table" id="part2"></div>
+    </div>
+    <div class="middle_table">
+        <div class="print_table" id="part3"></div>
+    </div>
+    <div class="foot_table">
+        <div class="print_table" id="part4"></div>
+        <div class="print_table" id="part5"></div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/uikit.min.js"></script>
+</body>
+</html>
