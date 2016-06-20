@@ -1,88 +1,91 @@
-$(document).ready(function(){
+/*确定详情框*/
+function sure(){
+	var csure = document.getElementById("staffchange");
+	document.getElementById("staffchange").style.display="none";
+}
+/*关闭详情框*/
+function display(){
+	var cdisplay = document.getElementById("staffchange");
+	document.getElementById("staffchange").style.display="none";
+}
+/*确认添加框*/
+function sure1(){
+	var csure1 = document.getElementById("staffadd");
+	document.getElementById("staffadd").style.display="none";
+}
 
-/*function run(i){
-	if(i==0){
-      document.getElementById('iDBody1').style.display = "block";
-      document.getElementById('iDBody2').style.display = "none";
-    }
-    else{
-      document.getElementById('iDBody1').style.display = "none";
-      document.getElementById('iDBody2').style.display = "block";
-	}
-}*/
-    //mobile menu toggling
-    $("#menu_icon").click(function(){
-        $("header nav ul").toggleClass("show_menu");
-        $("#menu_icon").toggleClass("close_menu");
-        return false;
-    });
-
-    
-
-    //Contact Page Map Centering
-    var hw = $('header').width() + 50;
-    var mw = $('#map').width();
-    var wh = $(window).height();
-    var ww = $(window).width();
-
-    $('#map').css({
-        "max-width" : mw,
-        "height" : wh
-    });
-
-    if(ww>1100){
-         $('#map').css({
-            "margin-left" : hw
-        });
-    }
-
-   
-
-
-
-    //Tooltip
-    $("a").mouseover(function(){
-
-        var attr_title = $(this).attr("data-title");
-
-        if( attr_title == undefined || attr_title == "") return false;
-        
-        $(this).after('<span class="tooltip"></span>');
-
-        var tooltip = $(".tooltip");
-        tooltip.append($(this).data('title'));
-
-         
-        var tipwidth = tooltip.outerWidth();
-        var a_width = $(this).width();
-        var a_hegiht = $(this).height() + 3 + 4;
-
-        //if the tooltip width is smaller than the a/link/parent width
-        if(tipwidth < a_width){
-            tipwidth = a_width;
-            $('.tooltip').outerWidth(tipwidth);
-        }
-
-        var tipwidth = '-' + (tipwidth - a_width)/2;
-        $('.tooltip').css({
-            'left' : tipwidth + 'px',
-            'bottom' : a_hegiht + 'px'
-        }).stop().animate({
-            opacity : 1
-        }, 200);
-       
-
-    });
-
-    $("a").mouseout(function(){
-        var tooltip = $(".tooltip");       
-        tooltip.remove();
-    });
-
-
-});
-
-
-
-
-
+/*取消员工添加框*/
+function display1(){
+	var cdisplay1 = document.getElementById("staffadd");
+	document.getElementById("staffadd").style.display="none";
+}
+/*删除员工信息*/
+function display2(){
+	var cshow = document.getElementById("showstaff");
+	document.getElementById("showstaff").style.display="none";
+}
+/*删除类别信息*/
+function display31(){
+	var csho = document.getElementById("ss_print");
+	document.getElementById("ss_print").style.display="none";
+}
+/*确定类别修改框*/
+function sure311(){
+	var cshfwo1 = document.getElementById("sortchange");
+	document.getElementById("sortchange").style.display="none";
+}
+/*取消类别修改框*/
+function display311(){
+	var cshfwo = document.getElementById("sortchange");
+	document.getElementById("sortchange").style.display="none";
+}
+/*确定类别添加框*/
+function sure312(){
+	var cshf1wo1 = document.getElementById("sortadd");
+	document.getElementById("sortadd").style.display="none";
+}
+/*取消类别添加框*/
+function display312(){
+	var cshfwro = document.getElementById("sortadd");
+	document.getElementById("sortadd").style.display="none";
+}
+/*确定商品修改框*/
+function sure42(){
+	var cshewfwo1 = document.getElementById("comesschange");
+	document.getElementById("comesschange").style.display="none";
+}
+/*取消商品修改框*/
+function display42(){
+	var rt = document.getElementById("comesschange");
+	document.getElementById("comesschange").style.display="none";
+}
+/*确定商品添加框*/
+function sure41(){
+	var cshlof1wo1 = document.getElementById("comessadd");
+	document.getElementById("comessadd").style.display="none";
+}
+/*取消商品添加框*/
+function display41(){
+	var wro = document.getElementById("comessadd");
+	document.getElementById("comessadd").style.display="none";
+}
+/*删除商品信息*/
+function display3(){
+	var cshow3 = document.getElementById("printlight");
+	document.getElementById("printlight").style.display="none";
+}
+/*确定进货框*/
+function sure51(){
+	var cshlof1wo1 = document.getElementById("amountadd");
+	document.getElementById("amountadd").style.display="none";
+}
+/*取消进货框*/
+function display51(){
+	var wro = document.getElementById("amountadd");
+	document.getElementById("amountadd").style.display="none";
+}
+/*删除进货记录*/
+function display511(){
+	var wep = document.getElementById("showstaff");
+	document.getElementById("showstaff").style.display="none";
+}
