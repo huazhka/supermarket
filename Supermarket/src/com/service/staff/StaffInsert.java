@@ -47,13 +47,13 @@ public class StaffInsert extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		String username = "hhh";//request.getParameter("account");
-		String password = "123";//request.getParameter("pwd");
-		String name = "huazhka";//request.getParameter("name");
-		String sex = "2";//request.getParameter("sex");
-		String tele = "15016066772";//request.getParameter("tele");
+		String username = request.getParameter("account");
+		String password = request.getParameter("pwd");
+		String name = request.getParameter("staname");
+		String sex = request.getParameter("sex");
+		String tele = request.getParameter("tele");
 		String identity = "2";
-		String birthday = "1993-06-14";//request.getParameter("birthday");
+		String birthday = request.getParameter("birthday");
 		String params[] = new String[]{username,password,name,sex,tele,identity,birthday};
 		
 		DBO db = new DBO();

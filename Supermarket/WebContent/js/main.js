@@ -86,6 +86,22 @@ function display51(){
 }
 /*删除进货记录*/
 function display511(){
-	var wep = document.getElementById("showstaff");
-	document.getElementById("showstaff").style.display="none";
+	var wep = document.getElementById("showaddcom");
+	document.getElementById("showaddcom").style.display="none";
+}
+
+/*确定进货框*/
+function sure52(){
+	var cshlof1wo11 = document.getElementById("restockadd");
+	document.getElementById("restockadd").style.display="none";
+}
+/*取消进货框*/
+function display52(){
+	var wrowo = document.getElementById("restockadd");
+	document.getElementById("restockadd").style.display="none";
+}
+/*删除退货记录*/
+function display521(){
+	var wep = document.getElementById("showstaff2");
+	document.getElementById("showstaff2").style.display="none";
 }

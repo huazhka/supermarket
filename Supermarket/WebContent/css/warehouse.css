@@ -1,0 +1,158 @@
+.mainmanage{
+    display: block;
+    width: 82%;
+    height:700px;
+    float: right;
+    position: relative;
+    overflow: hidden;
+    background: #7BBCF4 url(../image/manageback.jpg) repeat 50% 50% fixed;
+}
+
+.stasearch{
+    width: 450px;
+    height: 100px;
+    margin: 0 auto;
+    border: 3px solid #1B1B1B;
+}
+.ul{
+    list-style: none;
+    margin:0 10px;
+}
+
+
+.button{
+    padding: 3px 9px;
+    color: #263f56;
+    border:1px solid #263f56;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition:0.5s all;
+    -webkit-transition:0.5s all;
+    -moz-transition:0.5s all;
+    -o-transition:0.5s all;
+    -ms-transition:0.5s all;
+}
+.button:hover{
+    color: #FFF;
+    background-color:#39f;
+}
+/*测试部分*/
+.comsearch{
+    border:solid 3px #555;
+    width: 450px;
+    margin:0 auto 0;
+    text-align: center;
+    line-height: 30px;
+}
+.title11{
+    height: 40px;
+    margin:0 auto 0;
+    color:#1B1B1B;
+    font-size: 16px;
+    text-align: center;
+}
+.title11 label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:500
+}
+.title{
+    height: 40px;
+    margin:0 auto 0;
+    color:#1B1B1B;
+    font-size: 17px;
+    font-weight:500;
+    text-align: center;
+}
+.title1{
+    width: 100px;
+    float: left;
+}
+.title2{
+    width: 130px;
+    float: left;
+}
+.form-control{
+    text-align:center;
+    width: 85%;
+    margin-left:10px;
+}
+.blank{
+    height:50px;
+    width:100%;
+}
+
+.searchset{
+    font-size: 17px;
+    text-align: center;
+    color: #1B1B1B;
+    font-weight: 700;
+    width: 400px;
+    margin: 0 auto;
+}
+.searchset2{
+    width: 450px;
+    height: 25px;
+    margin: 16px auto 0px;
+    text-align:center;
+}
+.searchset1{
+    margin-left:20px;
+    margin-top: 5px;
+}
+.searchset1 input[type="text"]{
+    width: 80px;
+    height: 28px;
+    border-radius: 5px;
+    border:1px solid #555;
+    margin: 0 10px;
+}
+.searchset select{
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    border-radius: 5px;
+    border:1px solid #555;
+    transition:0.5s all;
+    -webkit-transition:0.5s all;
+    -moz-transition:0.5s all;
+    -o-transition:0.5s all;
+    -ms-transition:0.5s all;
+}
+.sale_print{
+    width:560px;
+    height:auto;
+    margin:30px auto;
+}
+/*  弹窗css */
+.detailpart{
+    width:700px;
+    height:250px;
+    margin:0 auto;
+    text-align:center;
+}
+
+.uk-modal-dialog{
+    background: #cedff6;
+    width:700px;
+}
+.limit{
+    background: #cedff6;
+    width:580px;
+    height: 203px;
+    margin: 0 auto;
+}
+.uk-modal-header{
+    color: #555;
+}
+.staffchange{
+    width:700px;
+    height:800px;
+    margin:0 auto;
+    text-align:center;
+}
+.uk-modal-footer{
+    margin:10px auto;
+    text-align:center;
+}
