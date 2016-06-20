@@ -43,10 +43,10 @@ public class StaffShow extends HttpServlet {
 		HttpSession session = request.getSession();
 		String username = "fzb";//session.getAttribute("account");
 		String password = "123";//session.getAttribute("pwd");
-		String all = "true";//request.getParameter("all");
-		String stano = "1";//request.getParameter("stano");
-		String account = "fzb";//request.getParameter("account");
-		String name = "%冯志宝%";//request.getParameter("name");
+		String all = request.getParameter("all");
+		String stano = request.getParameter("stano");
+		String account = request.getParameter("account");
+		String name = "%"+request.getParameter("name")+"%";
 		
 		String params[] = new String[]{};
 		
@@ -71,7 +71,7 @@ public class StaffShow extends HttpServlet {
 			}else if(!account.equals("")){
 				sql = new String("SELECT * FROM staff WHERE identity=2 AND account='"+account+"'");
 			}else if(!name.equals("%%")){
-				sql = new String("SELECT * FROM staff WHERE identity=2 AND name LIKE '"+name+"'");
+				sql = new String("SELECT * FROM staff WHERE identity=2 AND staname LIKE '"+name+"'");
 			}
 			rs = db.executeQuery(sql, params);
 			if(rs.next()){
