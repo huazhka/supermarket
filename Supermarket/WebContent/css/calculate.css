@@ -1,0 +1,37 @@
+.mainmanage{
+    display: block;
+    width: 82%;
+    height:1400px;
+    float: right;
+    position: relative;
+    overflow: hidden;
+    background: #7BBCF4 url(../image/manageback.jpg) repeat 50% 50% fixed;
+}
+.top_table{
+
+}
+.print_table{
+    width: 400px;
+    height: 400px;
+    background-color: rgba(72, 72, 72, 0.26);
+}
+#part1{
+    margin: 50px 50px;
+    float: left;
+}
+
+#part2{
+    margin: 50px;
+    float:right;
+}
+#part3{
+    margin: 500px auto 0px;
+}
+#part4{
+    margin: 50px 50px;
+    float: left;
+}
+#part5{
+    margin: 50px 50px;
+    float: right;
+}
