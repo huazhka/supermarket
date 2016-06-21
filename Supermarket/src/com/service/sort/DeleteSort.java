@@ -47,7 +47,7 @@ public class DeleteSort extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		String sortno = "2";//request.getParameter("sortno");
+		String sortno = request.getParameter("sortno");
 		//String sortname = "食品";//request.getParameter("sortname");
 		
 		String params[] = new String[]{sortno};

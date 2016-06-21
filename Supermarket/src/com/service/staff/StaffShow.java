@@ -89,6 +89,7 @@ public class StaffShow extends HttpServlet {
 				temp.put("name", rs.getString(4));
 				temp.put("sex", rs.getInt(5));
 				temp.put("tele", rs.getString(6));
+				temp.put("identity", rs.getInt(7));
 				temp.put("birthday", rs.getString(8));
 				js.put(temp);
 			}

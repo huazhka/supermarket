@@ -51,8 +51,8 @@ public class StaffDelete extends HttpServlet {
 		HttpSession session = request.getSession();
 		String username = "1";//(String)session.getAttribute("account");
 		String password = "123";//(String)session.getAttribute("pwd");
-		String account = "4";//request.getParameter("account");
-		String params[] = new String[]{account};
+		String stano = request.getParameter("stano");
+		String params[] = new String[]{stano};
 		
 		DBO db = new DBO();
 		int n = 0;

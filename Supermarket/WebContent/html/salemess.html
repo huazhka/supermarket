@@ -10,6 +10,9 @@
 	<link rel="stylesheet" type="text/css" href="../css/datepicker.css"/>
     <link rel="stylesheet" type="text/css" href="../css/staffmess.css">
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	
+	<script src="../js/jquery-1.9.1.min.js"></script>
+	<script src="../ajax/salemess.js"></script>
 </head>
 <body>
 
@@ -65,7 +68,7 @@
 	      	<div class="controls2">
 				<div class="title6">
 	            商品编号：
-				<input type="text" name="id_comno" placeholder="如：001"/>
+				<input id="comno" type="text" name="id_comno" placeholder="如：001"/>
 				</div>
 			</div>
 	      </li>
@@ -90,7 +93,7 @@
 	      	<div class="controls2">
 				<div class="title6">
 	            出售数量：
-				<input type="text" name="id_saleamount" placeholder="如：13"/>
+				<input id="saleamount" type="text" name="id_saleamount" placeholder="如：13"/>
 				</div>
 			</div>
 	       </li>
@@ -101,7 +104,7 @@
 	      </li>-->
 		</ul>
         <div class="title6">
-        <input type="button" class="button" name="sure" value="登记"/>
+        <input id="record" type="button" class="button" name="sure" value="登记"/>
         </div>
 	</div>	
 	</li>
@@ -113,15 +116,15 @@
 				<label class="title2">商品编号</label>
 <!--				<label class="title3">商品类型</label>-->
 				<label class="title4">销售状态</label>
-			    <label class="title5">销售数量</label>
+			    <label class="title4">销售数量</label>
 			</div>
 			<div class="allsearch">
 				<div class="controls2 title1">
-					<input type="text" name="id_comname" id="saleno" placeholder="如：001"/>
+					<input id="saleno" type="text" name="id_comname" placeholder="如：雨伞"/>
 				</div>
 
 				<div class="controls2 title2">
-					<input type="text" name="id_comno" id="salecomno" placeholder="如：001"/>
+					<input id="salecomno" type="text" name="id_comno" placeholder="如：001"/>
 				</div>
 
 <!--				<div class="controls2 title3">
@@ -133,13 +136,15 @@
 		      		<option>玩具</option></select>
 		   		 </div>-->
 		    
-		    	<div class="controls2 title4">
+		    	<div class="title4">
 						<input type="radio"  name="id_state" value="1" checked="checked"/>已售出
 		            	<input type="radio"  name="id_state" value="2"/>退货
 		    	</div>
 				
-		        <div class="controls2 title5">
-					<input type="text" name="id_stano" placeholder="如：10"/>
+		        <div class="title4">
+				<input type="text" name="id_saleamount" id="id_saleamount1" />
+				-
+				<input type="text" name="id_saleamount" id="id_saleamount2" />
 				</div>
 			</div> 
 			<br>
@@ -152,14 +157,14 @@
 			    	<!--<input type="text" data-uk-datepicker="{format:'DD.MM.YYYY'}">-->
 				</form>
 		        <form class="uk-form">
-			        <input type="checkbox" value="全部记录"/>
+			        <input id="saleall" type="checkbox" value="全部记录"/>
 			        <span>全部商品</span>
 		      	</form> 
-		    	<input type="button" class="button" name="sure" value="查询"/>
+		    	<input id="saleseek" type="button" class="button" name="sure" value="查询"/>
 		    </div>
 	    </div>
 	    <!--输出查询结果-->
-	    <div class="sale_print">
+	    <div id="sale_div" class="sale_print">
         <!--输出表头-->
         <ul class="title">
         <li><label class="title1">商品编号</label></li>
@@ -168,12 +173,18 @@
         <li><label class="title4">出售日期</label></li>  
         </ul>
         <!--查询结果-->
-        <ul class="title">
-        <li><label class="title1" id="id_ssaleno">10328372</label></li>
-        <li><label class="title4" id="id_scomname">越南挂耳式咖啡</label></li>
-        <li><label class="title1" id="id_ssaleamount">15</label></li>
-        <li><label class="title4" id="id_ssaledate">2016-5-30</label></li>  
-        </ul>
+<!--         <ul   class="title"> -->
+<!--         <li><label class="title1" id="id_ssaleno">10328372</label></li> -->
+<!--         <li><label class="title4" id="id_scomname">乐事薯片（美国经典原味）</label></li> -->
+<!--         <li><label class="title1" id="id_ssaleamount">15</label></li> -->
+<!--         <li><label class="title4" id="id_ssaledate">2016-5-30</label></li> -->
+<!--         </ul> -->
+<!--         <ul   class="title"> -->
+<!--         <li><label class="title1" id="id_ssaleno">10328372</label></li> -->
+<!--         <li><label class="title4" id="id_scomname">乐事薯片（美国经典原味）</label></li> -->
+<!--         <li><label class="title1" id="id_ssaleamount">15</label></li> -->
+<!--         <li><label class="title4" id="id_ssaledate">2016-5-30</label></li> -->
+<!--         </ul> -->
 	    </div>
   	</li>
 </ul>

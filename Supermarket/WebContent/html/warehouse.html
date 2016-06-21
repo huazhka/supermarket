@@ -68,7 +68,7 @@
         <div class="uk-modal-header">添加员工信息</div>
         <div class="detailtitle">
             <ul class="title11">
-                    <li><label class="title2">进货编号</label></li>
+                    <li><label class="title2">进货单号</label></li>
                     <li><label class="title2">商品编号</label></li>
                     <li><label class="title2">员工编号</label></li>
                     <li><label class="title2">进货数量</label></li>
@@ -114,14 +114,21 @@
     <div class="stasearch">
         <div class="searchset">
             <ul class="searchset2">
+                <li><label class="title1">进货单号</label></li>
                 <li><label class="title1">员工编号</label></li>
                 <li><label class="title1">商品编号</label></li>
+                <li><label class="title1">进货数量</label></li>
                 <li><label class="title1">进货日期</label></li>
                 <li><label class="title1"><input type="checkbox"/>全部记录</label></li>
             </ul>
-        </div>
+
         </ul class="searchset1">
-        <ul class="searchset1">
+        <ul class="controls2">
+            <li>
+                <div class="title1">
+                    <input type="text" class="form-control" name="id_stono" id="id_stono11" placeholder="不超过8个字符"/>
+                </div>
+            </li>
             <li>
                 <div class="title1">
                     <input type="text" class="form-control" name="stano" id="id_stano5" placeholder="如：12345678"/>
@@ -133,21 +140,32 @@
                 </div>
             </li>
             <li>
-                <div class="title1">
-                    <input type="text" class="form-control" name="stodate" id="id_stodate1" />
+                <div class="title4">
+                    <input type="text" name="id_sstoamount1" />
+                    -
+                    <input type="text" name="id_sstoamount2" />
                 </div>
             </li>
-            <li><input type="button" class="button" name="sure" value="搜索"/>
+            <li>
+                <select class="title5" name="id_sstodate">
+                    <option>请选择</option>
+                    <option>今天</option>
+                    <option>近一星期</option>
+                    <option>近一个月</option>
+                </select>
+            </li>
+            <li class="title1"><input type="button" class="button" name="sure" value="搜索"/>
                 <input type="button" class="button" name="sure" data-uk-modal="{target:'#amountadd'}" value="进货"/>
             </li>
         </ul>
     </div>
+        </div>
 
     <!--输出查询结果-->
     <div class="sale_print">
         <!--输出表头-->
         <ul class="title">
-            <li><label class="title1">进货编号</label></li>
+            <li><label class="title1">进货单号</label></li>
             <li><label class="title1">商品编号</label></li>
             <li><label class="title1">员工编号</label></li>
             <li><label class="title1">进货数量</label></li>

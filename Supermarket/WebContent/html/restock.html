@@ -161,37 +161,54 @@
     <div class="stasearch">
         <div class="searchset">
             <ul class="searchset2">
+                <li><label class="title1">退货单号</label></li>
                 <li><label class="title1">员工编号</label></li>
                 <li><label class="title1">商品编号</label></li>
+                <li><label class="title1">退货数量</label></li>
                 <li><label class="title1">退货日期</label></li>
                 <li><label class="title1"><input type="checkbox"/>全部记录</label></li>
             </ul>
-        </div>
-        </ul class="searchset1">
-        <ul class="searchset1">
-            <li>
-                <div class="title1">
-                    <input type="text" class="form-control" name="stano" id="id_stano8" placeholder="如：12345678"/>
-                </div>
-            </li>
-            <li>
-                <div class="title1">
-                    <input type="text" class="form-control" name="comno" id="id_comno8" />
-                </div>
-            </li>
-            <li>
-                <div class="title1">
-                    <input type="text" class="form-control" name="redate" id="id_redate1" />
-                </div>
-            </li>
-            <li><input type="button" class="button" name="sure" value="搜索"/>
-                <input type="button" class="button" name="sure" data-uk-modal="{target:'#restockadd'}" value="登记"/>
-            </li>
-        </ul>
-    </div>
 
+            </ul class="searchset1">
+            <ul class="controls2">
+                <li>
+                    <div class="title1">
+                        <input type="text" class="form-control" name="id_stono" id="id_stono21" placeholder="不超过8个字符"/>
+                    </div>
+                </li>
+                <li>
+                    <div class="title1">
+                        <input type="text" class="form-control" name="stano" id="id_stano8" placeholder="如：12345678"/>
+                    </div>
+                </li>
+                <li>
+                    <div class="title1">
+                        <input type="text" class="form-control" name="comno" id="id_comno8" />
+                    </div>
+                </li>
+                <li>
+                    <div class="title4">
+                        <input type="text" name="id_reamount5" />
+                        -
+                        <input type="text" name="id_reamount6" />
+                    </div>
+                </li>
+                <li>
+                    <select class="title5" name="id_redate1">
+                        <option>请选择</option>
+                        <option>今天</option>
+                        <option>近一星期</option>
+                        <option>近一个月</option>
+                    </select>
+                </li>
+                <li class="title1"><input type="button" class="button" name="sure" value="搜索"/>
+                    <input type="button" class="button" name="sure" data-uk-modal="{target:'#restockadd'}" value="登记"/>
+                </li>
+            </ul>
+        </div>
+    </div>
     <!--输出查询结果-->
-    <div class="sale_print">
+    <div class="sale_print2">
         <!--输出表头-->
         <ul class="title">
             <li><label class="title1">退货编号</label></li>
