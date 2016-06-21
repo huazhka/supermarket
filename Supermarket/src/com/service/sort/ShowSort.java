@@ -43,7 +43,10 @@ public class ShowSort extends HttpServlet {
 		HttpSession session = request.getSession();
 		String username = "1";//(String)session.getAttribute("account");
 		String password = "123";//(String)session.getAttribute("pwd");
-		
+		String all = request.getParameter("all");
+		System.out.println(all);
+		String sortno = request.getParameter("sortno");
+		System.out.println(sortno);
 		String params[] = new String[]{};
 		
 		DBO db = new DBO();
@@ -60,7 +63,11 @@ public class ShowSort extends HttpServlet {
 				System.out.println("连接成功！");
 			}
 		if(username!=null&&password!=null){
-			sql = new String("SELECT * FROM sort");
+			if(all.equals("true")){
+				sql = new String("SELECT * FROM sort");
+			}else{
+				sql = new String("SELECT * FROM sort WHERE sortno="+sortno);
+			}
 			rs = db.executeQuery(sql, params);
 			if(rs.next()){
 				status = true;

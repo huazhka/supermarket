@@ -47,8 +47,8 @@ public class AlterSort extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		String sortno = "1";//request.getParameter("sortno");
-		String sortname = "食品";//request.getParameter("sortname");
+		String sortno = request.getParameter("sortno");
+		String sortname = request.getParameter("sortname");
 		
 		String params[] = new String[]{sortname,sortno};
 		

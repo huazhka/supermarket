@@ -115,7 +115,7 @@
             <li>
             	<div class="title2">
             		<form id="insertradio" action="#">
-						<input type="radio"  name="id_dsex" id="id_csex" value="1" />男
+						<input type="radio"  name="id_dsex" id="id_csex" value="1" checked="checked"/>男
 		            	<input type="radio"  name="id_dsex" id="id_csex" value="2"/>女
 		            </form>
 		    	</div>
@@ -160,10 +160,10 @@
     	</div>
 		<div class="detailshow">
     	<ul class="title11">
-    		<li><label class="title2" id="id_dstano">10328372</label></li>
+    		<li><label class="title2" id="id_dstano">1</label></li>
         	<li><label class="title2" id="id_dstaname">黄志康</label></li>
         	<li><label class="title2" id="id_daccount">huangzhikang</label></li>
-        	<li><label class="title2" id="id_dpwd">10328372</label></li> 
+        	<li><label class="title2" id="id_dpwd">123</label></li> 
         </ul>
     	</div>
     	<div class="detailtitle">
@@ -176,7 +176,7 @@
     	</div>
     	<div class="detailtitle">
     	<ul class="title11">
-    		<li><label class="title2" id="id_dsex">10328372</label></li>
+    		<li><label class="title2" id="id_dsex">男</label></li>
             <li><label class="title2" id="id_dtele">18456143795</label></li>
         	<li><label class="title2" id="id_dauthority">管理员</label></li>
         	<li><label class="title2" id="id_dbirthday">1994-12-31</label></li>
@@ -222,33 +222,35 @@
             </li>-->
             <li>
             	<div class="title2">
-                <input type="text" class="form-control" name="id_cstaname" id="id_cstaname" placeholder="如：黄志康"/>
+                <input type="text" class="form-control" name="id_cstaname" id="id_acstaname" placeholder="如：黄志康"/>
                 </div>
             </li>
 <!--            <li>
             	<div class="title2">
-                <input type="text" class="form-control" name="id_caccount" id="id_caccount" placeholder="不超过20个字符"/>
+                <input type="text" class="form-control" name="id_acaccount" id="id_caccount" placeholder="不超过20个字符"/>
                 </div>
             </li>-->
             <li>
             	<div class="title2">
-                <input type="text" class="form-control" name="id_cpwd" id="id_cpwd" placeholder="不超过10个字符"/>
+                <input type="text" class="form-control" name="id_cpwd" id="id_acpwd" placeholder="不超过10个字符"/>
                 </div>
             </li>
             <li>
             	<div class="title2">
-						<input type="radio"  name="id_dsex" id="id_csex" value="1" />男
-		            	<input type="radio"  name="id_dsex" id="id_csex" value="2"/>女
+            		<form id="alterstaff" action="#">
+						<input type="radio"  name="id_adsex"  value="1" checked="checked"/>男
+		            	<input type="radio"  name="id_adsex"  value="2"/>女
+		            </form>
 		    	</div>
             </li>
             <li>
             	<div class="title2">
-                <input type="text" class="form-control" name="id_dtele" id="id_ctele" placeholder=""/>
+                <input type="text" class="form-control" name="id_dtele" id="id_actele" placeholder=""/>
             	</div>
             </li>    
             <li>
             	<div class="title2">
-                <input type="text" class="form-control" name="id_dbirthday" id="id_dbirthday"/>
+                <input type="text" class="form-control" name="id_dbirthday" id="id_adbirthday"/>
                 </div>
             </li>
             </ul>
@@ -307,16 +309,16 @@
         </ul>
         <!--查询结果-->
         <div id="showstaff">
-       <ul class="title">
-        <li><label class="title1" id="id_pstano">10328372</label></li>
+       <!-- <ul class="title">
+        <li><label class="title1" id="id_pstano">1</label></li>
         <li><label class="title1" id="id_pstaname">黄志康</label></li>
         <li><label class="title2" id="id_paccount">huangzhikang</label></li>
         <li><label class="title2" id="id_ptele">18456143795</label></li>  
         <li><input type="button" class="button" name="detail" data-uk-modal="{target:'#detailpart'}" value="详情"/>
         	<input type="button" class="button" name="change" data-uk-modal="{target:'#staffchange'}" value="修改"/>
-            <input type="button" class="button" name="delete" onclick="display2()" value="删除"/>
+            <input type="button" class="button" name="delete" onclick="deletestaff(this)" value="删除"/>
         </li>
-        </ul>
+        </ul> -->
         
         </div>
 	</div>

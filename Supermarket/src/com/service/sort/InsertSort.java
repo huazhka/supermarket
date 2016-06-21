@@ -48,7 +48,7 @@ public class InsertSort extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
 		//String sortno = "2";//request.getParameter("sortno");
-		String sortname = "生活类";//request.getParameter("sortname");
+		String sortname = request.getParameter("sortname");
 		
 		String params[] = new String[]{sortname};
 		

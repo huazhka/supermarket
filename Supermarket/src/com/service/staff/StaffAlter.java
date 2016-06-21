@@ -47,12 +47,18 @@ public class StaffAlter extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		String stano = "5";//request.getParameter("stano");
-		String pwd = "";//request.getParameter("pwd");
-		String name = "huazhka";//request.getParameter("name");
-		String sex = "2";//request.getParameter("sex");
-		String tele = "";//request.getParameter("tele");
-		String birthday = "1993-06-14";//request.getParameter("birthday");
+		String stano = (String)request.getParameter("stano");
+		System.out.println(stano);
+		String name = (String)request.getParameter("staname");
+		System.out.println(name);
+		String pwd = (String)request.getParameter("pwd");
+		System.out.println(pwd );
+		String sex = (String)request.getParameter("sex");
+		System.out.println(sex);
+		String tele = (String)request.getParameter("tele");
+		System.out.println(tele);
+		String birthday = (String)request.getParameter("birthday");
+		System.out.println(birthday);
 		String params[] = new String[]{sex,stano};
 		
 		DBO db = new DBO();
