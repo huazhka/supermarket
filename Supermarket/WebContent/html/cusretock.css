@@ -1,0 +1,163 @@
+.mainmanage{
+    display: block;
+    width: 82%;
+    height:700px;
+    float: right;
+    position: relative;
+    overflow: hidden;
+    background: #7BBCF4 url(../image/manageback.jpg) repeat 50% 50% fixed;
+}
+.salsearch{
+    border:solid 3px #000000;
+    padding:10px;
+    width:590px;
+    margin:0 auto 0;
+    text-align: center;
+    line-height: 30px;
+}
+.comsearch2{
+    width: 100%;
+    margin:10px 10px;
+}
+.ul{
+    list-style: none;
+    margin:0 10px;
+}
+span{
+    font-size:18px;
+}
+.title11{
+
+    width: 550px;
+    height: 40px;
+    margin: 0 auto;
+    color:#1B1B1B;
+    font-size: 17px;
+    font-weight:500;
+}
+.title12{
+    text-align:center;
+    width: 600px;
+    height: 40px;
+    margin: 0 auto;
+    color:#1B1B1B;
+    font-size: 17px;
+    font-weight:500;
+}
+.title{
+    height: 40px;
+    margin:0 auto 0;
+    color:#1B1B1B;
+    font-size: 17px;
+    font-weight:500;
+    text-align: center;
+}
+.title1{
+    width: 100px;
+    float: left;
+}
+.title2{
+    width: 100px;
+    float: left;
+}
+.title3{
+    width: 100px;
+    float: left;
+}
+.title4{
+    width: 130px;
+    float: left;
+
+}
+.title4 input[type="text"]{
+    /*	margin-left: 10px;*/
+    width: 35px;
+    height: 28px;
+    border-radius: 5px;
+    border:1px solid #555;
+    transition:0.5s all;
+    -webkit-transition:0.5s all;
+    -moz-transition:0.5s all;
+    -o-transition:0.5s all;
+    -ms-transition:0.5s all;
+}
+.title7{
+    width: 120px;
+    float: left;
+    margin: 0 10px 0 10px;
+}
+.controls2 input[type="text"]{
+    width: 80px;
+    height: 28px;
+    border-radius: 5px;
+    border:1px solid #555;
+    padding-left: 6px;
+    transition:0.5s all;
+    -webkit-transition:0.5s all;
+    -moz-transition:0.5s all;
+    -o-transition:0.5s all;
+    -ms-transition:0.5s all;
+}
+.title5{
+    width: 300px;
+    float: left;
+}
+.controls2 input[type="text"]:hover,
+.controls2 input[type="text"]:focus,
+.controls2 input[type="text"]:active,
+.controls2 select:hover,
+.controls2 select:focus,
+.controls2 select:active{
+    border-color:#263f56;
+    -webkit-box-shadow:0 0 10px rgba(255,255,255,1);
+    -moz-box-shadow:0 0 10px rgba(255,255,255,1);
+    box-shadow:0 0 8px rgba(255,255,255,1);
+}
+.controls2 select{
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    border-radius: 5px;
+    border:1px solid #555;
+    transition:0.5s all;
+    -webkit-transition:0.5s all;
+    -moz-transition:0.5s all;
+    -o-transition:0.5s all;
+    -ms-transition:0.5s all;
+}
+
+.button{
+    padding: 3px 9px;
+    line-height: 20px;
+    color: #263f56;
+    border:1px solid #263f56;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition:0.5s all;
+    -webkit-transition:0.5s all;
+    -moz-transition:0.5s all;
+    -o-transition:0.5s all;
+    -ms-transition:0.5s all;
+}
+.button:hover{
+    color: #FFF;
+    background-color:#39f;
+}
+
+.uk-modal-dialog{
+    background: #cedff6;
+    width:600px;
+}
+.uk-modal-header{
+    color: #555;
+}
+.uk-modal-footer{
+    margin:10px auto;
+    text-align:center;
+}
+.sale_print{
+    width:600px;
+    height:auto;
+    margin:30px auto;
+}
