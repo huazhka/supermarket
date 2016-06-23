@@ -105,3 +105,38 @@ function display521(){
 	var wep = document.getElementById("showstaff2");
 	document.getElementById("showstaff2").style.display="none";
 }
+/*确定添加销售记录框*/
+function sure61(){
+	var cshloweowo1 = document.getElementById("saleadd");
+	document.getElementById("saleadd").style.display="none";
+}
+/*取消添加销售记录框*/
+function display61(){
+	var wwero = document.getElementById("saleadd");
+	document.getElementById("saleadd").style.display="none";
+}
+/*确定修改销售记录框*/
+function sure62(){
+	var cshloweowo1 = document.getElementById("salechange");
+	document.getElementById("salechange").style.display="none";
+}
+/*取消修改销售记录框*/
+function display62(){
+	var wwero = document.getElementById("salechange");
+	document.getElementById("salechange").style.display="none";
+}
+/*确定添加顾客退货记录框*/
+function sure71(){
+	var cshloweowo1 = document.getElementById("cusrestockadd");
+	document.getElementById("cusrestockadd").style.display="none";
+}
+/*取消修改销售记录框*/
+function display71(){
+	var wwero = document.getElementById("cusrestockadd");
+	document.getElementById("cusrestockadd").style.display="none";
+}
+/*删除退货记录*/
+function display7(){
+	var wep = document.getElementById("showcusrestock");
+	document.getElementById("showcusrestock").style.display="none";
+}
