@@ -47,13 +47,13 @@ public class AlterCom extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		String comno = "6";//request.getParameter("comno");
-		String comname = "香辣鸡腿";//request.getParameter("comname");
-		String price = "8";//request.getParameter("price");
-		String sortno = "1";//request.getParameter("sortno");
-		String supno = "1";//request.getParameter("supno");
+		String comno = request.getParameter("comno");
+		String comname = request.getParameter("comname");
+		String price = request.getParameter("price");
+		String sortno = request.getParameter("sortno");
+		//String supno = "1";//request.getParameter("supno");
 		
-		String params[] = new String[]{comname,price,sortno,supno,comno};
+		String params[] = new String[]{comname,price,sortno,comno};
 		
 		DBO db = new DBO();
 		int n = 0;
@@ -67,7 +67,8 @@ public class AlterCom extends HttpServlet {
 			if(db.getConn()!=null){
 				System.out.println("连接成功！");
 			}
-			sql = new String("UPDATE commodity SET comname=?,price=?,sortno=?,supno=? WHERE comno=?");
+
+			sql = new String("UPDATE commodity SET comname=?,price=?,sortno=? WHERE comno=?");
 			n = db.executeUpdate(sql, params);
 			if(n!=0){
 				status = true;

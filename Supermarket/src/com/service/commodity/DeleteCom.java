@@ -47,7 +47,7 @@ public class DeleteCom extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		String comno = "7";//request.getParameter("comno");
+		String comno = request.getParameter("comno");
 		
 		String params[] = new String[]{comno};
 		

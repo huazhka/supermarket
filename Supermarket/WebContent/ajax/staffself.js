@@ -3,7 +3,7 @@
  */
 
 $(function(){
-	alert("staffself");
+	//alert("staffself");
 	$.ajax({
         url: "../Staffself",
         type: "POST",
@@ -33,7 +33,7 @@ $(function(){
 }); 
 $(function(){
 	$("#alterpwd").bind("click",function(){
-		alert("pswalter");
+		//alert("pswalter");
 		$.ajax({
 			url: "../PswAlter",
 			type: "POST",

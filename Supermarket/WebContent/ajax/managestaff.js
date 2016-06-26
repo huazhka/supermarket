@@ -4,7 +4,7 @@
 //删除员工
 function deletestaff(d){
 	var stno=$(d).attr("name");
-	alert(stno);
+	//alert(stno);
 	$.ajax({
 		url: "../StaffDelete",
 		type: "POST",
@@ -34,7 +34,7 @@ function SendStano(b){
 
 //显示详细信息
 function ShowStaff(b){
-	alert("name")
+	//alert("name")
 	var stno = $(b).attr("name");
 	$("#id_dstano").html(stno);
 	$.ajax({
@@ -65,7 +65,7 @@ function ShowStaff(b){
 				}else{
 					$("#id_dauthority").html("员工");
 				}
-				$("#id_dbirthday").html(msg[0].birthday);
+				$("#id_ddbirthday").html(msg[0].birthday);
 				
 			}else{
 				alert(data.detail);
@@ -79,7 +79,7 @@ function ShowStaff(b){
 //查询和显示员工信息
 $(function(){
 	$("#seekstaff").bind("click",function(){
-		alert("managestaff");
+		//alert("managestaff");
 		$.ajax({
 			url: "../StaffShow",
 			type: "get",
@@ -92,7 +92,7 @@ $(function(){
 			dataType:"json",
 			success: function (data) {
 				$("#showstaff").empty();
-				alert("请求成功！");
+				//alert("请求成功！");
 				if(data.status){
 					alert(data.detail);
 					var msg = data.message;
@@ -120,7 +120,7 @@ $(function(){
 	})
 	$(function(){
 		$("#insert").bind("click",function(){
-			alert("staffinsert");
+			//alert("staffinsert");
 			$.ajax({
 				url: "../StaffInsert",
 				type: "POST",
@@ -149,7 +149,7 @@ $(function(){
 	
 //修改员工信息	
 	$("#sure").bind("click",function(){
-		alert("staffalter");
+		//alert("staffalter");
 		var button=this;
 		var stno=$(button).attr("name");
 		$.ajax({

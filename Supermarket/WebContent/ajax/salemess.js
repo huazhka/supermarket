@@ -12,11 +12,11 @@
 
 
 
-alert("salemess");
+//alert("salemess");
 $(function(){
 	
 	$("#record").bind("click",function(){
-		alert("insertstork");
+		//alert("insertstork");
 		$.ajax({
 			url: "../InsertSale",
 			type: "post",
@@ -26,7 +26,7 @@ $(function(){
 			},
 			dataType:"json",
 			success: function (data) {
-				alert("请求成功！");
+				//alert("请求成功！");
 				if(data.status){
 					alert(data.detail);
 				}else{
@@ -41,7 +41,7 @@ $(function(){
 	
 	
 	$("#saleseek").bind("click",function(){
-		alert("searchstork");
+		//alert("searchstork");
 		$.ajax({
 			url: "../SearchSale",
 			type: "post",
@@ -57,7 +57,7 @@ $(function(){
 			},
 			dataType:"json",
 			success: function (data) {
-				alert("请求成功！");
+				//alert("请求成功！");
 				if(data.status){
 //					alert(data.detail);
 					var msg=data.message;

@@ -58,7 +58,7 @@ public class InsertSale extends HttpServlet {
 		String dateTime = sdf.format(currDate);
 		String saleamout = request.getParameter("saleamount");
 		
-		String params[] = new String[]{comno,stano,dateTime,"1",saleamout};
+		String params[] = new String[]{comno,stano,dateTime,"2",saleamout};
 		
 		DBO db = new DBO();
 		int n = 0;

@@ -90,7 +90,7 @@ public class StaffShow extends HttpServlet {
 				temp.put("sex", rs.getInt(5));
 				temp.put("tele", rs.getString(6));
 				temp.put("identity", rs.getInt(7));
-				temp.put("birthday", rs.getString(8));
+				temp.put("birthday", rs.getDate(8).toString());
 				js.put(temp);
 			}
 		}else{
@@ -99,6 +99,7 @@ public class StaffShow extends HttpServlet {
 		json.put("status", status);
 		json.put("detail", detail);
 		json.put("message", js);
+		System.out.println(json.toString());
 		out.println(json.toString());
 		db.closeAll();
 		} catch (ClassNotFoundException | InstantiationException

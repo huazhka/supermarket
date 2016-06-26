@@ -7,9 +7,22 @@
     <link rel="stylesheet" type="text/css" href="../css/uikit.min.css"/>
     <link rel="stylesheet" type="text/css" href="../css/conflex.css"/>
     <link rel="stylesheet" type="text/css" href="../css/warehouse.css"/>
+    
+    <script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
+	<script type="text/javascript" src="../js/uikit.min.js"></script>
+	<script src="../js/myajax.js"></script>
+	<script src="../js/ShowStock.js"></script>
+	<script src="../js/InsertStock.js"></script>
+<style>
+#id_scomno1{
+	width:220px;
+	font-size:15px;
+}	
+</style>
 </head>
 
-<body>
+<body style="overflow:hidden;">
 
 <header>
     <div class="logo">
@@ -33,11 +46,11 @@
                 </li>
 
                 <li class="uk-parent">
-                    <a href="#">商品销售管理</a>
-                    <ul class="uk-nav-sub">
+                    <a href="manacommess.html">商品销售管理</a>
+                    <!-- <ul class="uk-nav-sub">
                         <li><a href="manacommess.html">查询销售记录</a></li>
                         <li><a href="cusretock.html">顾客退货管理</a></li>
-                    </ul>
+                    </ul> -->
                 </li>
 
                 <li class="uk-parent">
@@ -68,29 +81,19 @@
         <div class="uk-modal-header">添加员工信息</div>
         <div class="detailtitle">
             <ul class="title11">
-                    <li><label class="title2">进货单号</label></li>
                     <li><label class="title2">商品编号</label></li>
-                    <li><label class="title2">员工编号</label></li>
                     <li><label class="title2">进货数量</label></li>
             </ul>
         </div>
         <div class="detailchange">
             <ul class="title11">
+                
                 <li>
                     <div class="title2">
-                        <input type="text" class="form-control" name="id_stono" id="id_stono6" placeholder="不超过8个字符"/>
+                        <input type="text" class="form-control" name="id_scomno" id="id_scomno6" placeholder="如：1"/>
                     </div>
                 </li>
-                <li>
-                    <div class="title2">
-                        <input type="text" class="form-control" name="id_scomno" id="id_scomno6" placeholder="如：黄志康"/>
-                    </div>
-                </li>
-                <li>
-                    <div class="title2">
-                        <input type="text" class="form-control" name="id_sstano" id="id_sstano6" placeholder="不超过20个字符"/>
-                    </div>
-                </li>
+                
                 <li>
                     <div class="title2">
                         <input type="text" class="form-control" name="id_sstoamount" id="id_sstoamount" placeholder="不超过10个字符"/>
@@ -100,11 +103,11 @@
         </div>
 
         <div class="uk-modal-footer">
-            <input type="button" class="button" name="sure" onclick="sure51()" value="确定"/>
-            <input type="button" class="button" name="cancel" onclick="display51()" value="取消"/>
+            <input type="button" class="uk-button uk-button-primary uk-modal-close" name="sure" " value="确定"/>
+            <input type="button" class="uk-button uk-button-primary uk-modal-close" name="cancel" " value="取消"/>
         </div>
     </div>
-    e</div>
+    </div>
 </div>
 </div>
 
@@ -119,7 +122,11 @@
                 <li><label class="title1">商品编号</label></li>
                 <li><label class="title1">进货数量</label></li>
                 <li><label class="title1">进货日期</label></li>
-                <li><label class="title1"><input type="checkbox"/>全部记录</label></li>
+                <li>
+                <label class="title1">
+                <input id="stockall" type="checkbox"/>全部记录
+                </label>
+                </li>
             </ul>
 
         </ul class="searchset1">
@@ -141,20 +148,21 @@
             </li>
             <li>
                 <div class="title4">
-                    <input type="text" name="id_sstoamount1" />
+                    <input id="stoamount1" type="text" name="id_sstoamount1" />
                     -
-                    <input type="text" name="id_sstoamount2" />
+                    <input id="stoamount2" type="text" name="id_sstoamount2" />
                 </div>
             </li>
             <li>
-                <select class="title5" name="id_sstodate">
-                    <option>请选择</option>
-                    <option>今天</option>
-                    <option>近一星期</option>
-                    <option>近一个月</option>
+                <select id="stock_time" class="title5" name="id_sstodate">
+                    <option value="0">请选择</option>
+                    <option value="1">今天</option>
+                    <option value="2">近一星期</option>
+                    <option value="3">近一个月</option>
                 </select>
             </li>
-            <li class="title1"><input type="button" class="button" name="sure" value="搜索"/>
+            <li class="title1">
+            	<input type="button" class="button" name="sure" onclick="sendShowStockRequest();" value="搜索"/>
                 <input type="button" class="button" name="sure" data-uk-modal="{target:'#amountadd'}" value="进货"/>
             </li>
         </ul>
@@ -162,34 +170,24 @@
         </div>
 
     <!--输出查询结果-->
-    <div class="sale_print">
+    <div  class="sale_print">
         <!--输出表头-->
         <ul class="title">
-            <li><label class="title1">进货单号</label></li>
-            <li><label class="title1">商品编号</label></li>
-            <li><label class="title1">员工编号</label></li>
+<!--             <li><label class="title1">进货单号</label></li> -->
+            <li><label class="title1" style="width:220px">商品名称</label></li>
+            <li><label class="title1">员工姓名</label></li>
             <li><label class="title1">进货数量</label></li>
             <li><label class="title1">进货日期</label></li>
         </ul>
+        
+
         <!--查询结果-->
         <div id="showaddcom">
-            <ul class="title">
-                <li><label class="title1" id="id_stono">10328372</label></li>
-                <li><label class="title1" id="id_scomno1">29309829</label></li>
-                <li><label class="title1" id="id_sstano1">93082830</label></li>
-                <li><label class="title1" id="id_sstoamount1">139</label></li>
-                <li><label class="title1" id="id_sstodate1">2016-4-8</label></li>
-                <li>
-                    <input type="button" class="button" name="delete" onclick="display511()" value="删除"/>
-                </li>
-            </ul>
+                
         </div>
     </div>
 </div>
 </div>
 
-<script type="text/javascript" src="../js/jquery.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" src="../js/uikit.min.js"></script>
 </body>
 </html>
