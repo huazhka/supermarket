@@ -25,40 +25,44 @@ import com.dao.DBO;
 @WebServlet("/InsertStock")
 public class InsertStock extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public InsertStock() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public InsertStock() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		this.doPost(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		String comno = "6";//request.getParameter("comno");
-		String stano = "1";//request.getParameter("stano");
+		String comno = request.getParameter("comno");
+		String stano = "1";// request.getParameter("stano");
 		Date currDate = (Date) Calendar.getInstance().getTime();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String dateTime = sdf.format(currDate);
-		String stoamount = "10";//request.getParameter("stoamount");
-		
-		String params[] = new String[]{comno,stano,dateTime,stoamount};
-		
+		String stoamount = request.getParameter("stoamount");
+
+		String params[] = new String[] { comno, stano, dateTime, stoamount };
+
 		DBO db = new DBO();
 		int n = 0;
 		String sql = null;
@@ -68,15 +72,16 @@ public class InsertStock extends HttpServlet {
 		Boolean status = false;
 		String detail = null;
 		try {
-			if(db.getConn()!=null){
+			if (db.getConn() != null) {
 				System.out.println("连接成功！");
 			}
-			sql = new String("INSERT INTO stock(comno,stano,stodate,stoamount) VALUES(?,?,?,?)");
+			sql = new String(
+					"INSERT INTO stock(comno,stano,stodate,stoamount) VALUES(?,?,?,?)");
 			n = db.executeUpdate(sql, params);
-			if(n!=0){
+			if (n != 0) {
 				status = true;
 				detail = new String("进货成功！");
-			}else{
+			} else {
 				detail = new String("进货失败！");
 			}
 			json.put("status", status);

@@ -7,7 +7,7 @@
 }
 .uk-modal-dialog{
     background: #cedff6;
-    width:700px;
+    width:300px;
 }
 .uk-modal-header{
     color: #555;
@@ -87,7 +87,7 @@
 }
 .title12{
     text-align:center;
-    width: 660px;
+    width: 550px;
     height: 40px;
     margin: 0 auto;
     color:#1B1B1B;
@@ -261,6 +261,24 @@
 }
 .sale_print{
     width:650px;
-    height:auto;
+    height:400px;
     margin:30px auto;
+    overflow: scroll;
+}
+.uk-button{
+    padding: 0px 8px;
+    color: #263f56;
+    border:1px solid #263f56;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition:0.5s all;
+    -webkit-transition:0.5s all;
+    -moz-transition:0.5s all;
+    -o-transition:0.5s all;
+    -ms-transition:0.5s all;
+}
+.uk-button:hover{
+    color: #FFF;
+    background-color:#39f;
 }

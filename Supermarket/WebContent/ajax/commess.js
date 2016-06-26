@@ -19,7 +19,7 @@
 }*/
 $(function(){
 	$("#seek").bind("click",function(){
-		alert("searchcom");
+		//alert("searchcom");
 		$.ajax({
 			url: "../SearchCom",
 			type: "post",
@@ -34,7 +34,7 @@ $(function(){
 			dataType:"json",
 			success: function (data) {
 				$("#comprint").empty();
-				alert("请求成功！");
+				//alert("请求成功！");
 				if(data.status){
 					alert(data.detail);
 					var msg = data.message;

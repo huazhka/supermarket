@@ -3,7 +3,7 @@
  */
 function AlterSort(a){
 	var sortno = $(a).attr("name");
-	alert(sortno);
+	//alert(sortno);
 	$("#altersure").attr("name",sortno);
 }
 
@@ -17,7 +17,7 @@ function DeleteSort(d){
 		},
 		dataType:"json",
 		success: function (data) {
-			alert("请求成功！");
+			//alert("请求成功！");
 			if(data.status){
 				alert(data.detail);
 			}else{
@@ -65,7 +65,7 @@ $(function(){
 	});
 	//插入sort
 	$("#insertsort").bind("click",function(){
-		alert("insertsort");
+		//alert("insertsort");
 		$.ajax({
 			url: "../InsertSort",
 			type: "post",
@@ -74,7 +74,7 @@ $(function(){
 			},
 			dataType:"json",
 			success: function (data) {
-				alert("请求成功！");
+				//alert("请求成功！");
 				if(data.status){
 					alert(data.detail);
 				}else{
@@ -89,7 +89,7 @@ $(function(){
 	
 	//修改
 	$("#altersure").bind("click",function(){
-		alert("altersort");
+		//alert("altersort");
 		var sort = $("#altersure").attr("name");
 		$.ajax({
 			url: "../AlterSort",
@@ -100,7 +100,7 @@ $(function(){
 			},
 			dataType:"json",
 			success: function (data) {
-				alert("请求成功！");
+				//alert("请求成功！");
 				if(data.status){
 					alert(data.detail);
 				}else{

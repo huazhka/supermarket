@@ -50,12 +50,12 @@ public class InsertCom extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		String comname = "香辣鸡腿";//request.getParameter("comname");
-		String price = "8";//request.getParameter("price");
-		String sortno = "1";//request.getParameter("sortno");
-		String supno = "1";//request.getParameter("supno");
+		String comname = request.getParameter("comname");
+		String price = request.getParameter("price");
+		String sortno = request.getParameter("sortno");
+		//String supno = request.getParameter("supno");
 		
-		String params[] = new String[]{comname,price,sortno,supno};
+		String params[] = new String[]{comname,price,sortno};
 		
 		DBO db = new DBO();
 		int n = 0;
@@ -69,7 +69,7 @@ public class InsertCom extends HttpServlet {
 			if(db.getConn()!=null){
 				System.out.println("连接成功！");
 			}
-			sql = new String("INSERT INTO commodity(comname,price,sortno,supno) VALUES(?,?,?,?)");
+			sql = new String("INSERT INTO commodity(comname,price,sortno) VALUES(?,?,?)");
 			n = db.executeUpdate(sql, params);
 			if(n!=0){
 				status = true;

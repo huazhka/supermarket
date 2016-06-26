@@ -21,7 +21,7 @@ function sendSupplyTotalRequest(){
 function parseSupplyTotalRequest(){
 	
 	if(request.status==200&&request.readyState==4){
-		alert(request.responseText);
+//		alert(request.responseText);
 		
 		var supply_json=JSON.parse(request.responseText);
 		

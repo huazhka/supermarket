@@ -50,13 +50,13 @@ public class InsertRestock extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		String comno = "6";//request.getParameter("comno");
-		String stano = "1";//request.getParameter("stano");
+		String comno = request.getParameter("comno");
+		String stano = "5";//request.getParameter("stano");
 		Date currDate = (Date) Calendar.getInstance().getTime();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String dateTime = sdf.format(currDate);
-		String stoamount = "10";//request.getParameter("stoamount");
-		String reason = "不知道";//request.getParameter("reason");
+		String stoamount = request.getParameter("reamount");
+		String reason = request.getParameter("reason");
 		
 		String params[] = new String[]{comno,stano,dateTime,stoamount,reason};
 		

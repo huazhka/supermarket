@@ -49,13 +49,13 @@ public class ShowRestock extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		String stockall = "tru";//request.getParameter("stockall");
-		String resno = "";//request.getParameter("stono");
-		String stano = "5";//(String)session.getAttribute("stano");//个人进货查询
-		String comno = "";//(String)request.getParameter("comno");//按商品查询
-		String time = "3";//(String)request.getParameter("time");//按时间查询
-		String reamount1 = "100";//(String)request.getParameter("stoamount1");//按进货数量查询
-		String reamount2 = "1500";//(String)request.getParameter("stoamount2");//按进货数量查询
+		String stockall = request.getParameter("all");
+		String resno = request.getParameter("resno");
+		String stano = request.getParameter("stano");//个人进货查询
+		String comno = request.getParameter("comno");//按商品查询
+		String time = request.getParameter("time");//按时间查询
+		String reamount1 = request.getParameter("reamount1");//按进货数量查询
+		String reamount2 = request.getParameter("reamount2");//按进货数量查询
 		String params[] = null;
 		
 		DBO db = new DBO();
@@ -71,10 +71,10 @@ public class ShowRestock extends HttpServlet {
 				System.out.println("连接成功！");
 			}
 			if(stockall.equals("true")){
-				sql = new String("SELECT commodity.comname,staff.staname,redate,reamount,reason "+
+				sql = new String("SELECT resno,commodity.comname,staff.staname,redate,reamount,reason "+
 			"FROM commodity,staff,restock WHERE commodity.comno=restock.comno AND staff.stano=restock.stano");
 			}else if(!resno.equals("")){
-				sql = new String("SELECT commodity.comname,staff.staname,redate,reamount,reason "+
+				sql = new String("SELECT resno,commodity.comname,staff.staname,redate,reamount,reason "+
 			"FROM commodity,staff,restock WHERE commodity.comno=restock.comno AND staff.stano=restock.stano AND resno="+resno);
 			}else{
 				String sql1="",sql2="",sql3="",sql4="",sql5="";
@@ -97,7 +97,7 @@ public class ShowRestock extends HttpServlet {
 				if(!reamount2.equals("")){
 						sql5=" AND reamount<="+reamount2;	
 				}
-				sql = new String("SELECT commodity.comname,staff.staname,redate,reamount,reason FROM commodity,staff,restock "+
+				sql = new String("SELECT resno,commodity.comname,staff.staname,redate,reamount,reason FROM commodity,staff,restock "+
 				"WHERE commodity.comno=restock.comno AND staff.stano=restock.stano"+sql1+sql2+sql3+sql4+sql5);
 			}
 			//sql = new String("SELECT commodity.comname,staff.staname,redate,reamount,reason FROM commodity,staff,restock WHERE commodity.comno=restock.comno AND staff.stano=restock.stano");
@@ -108,11 +108,12 @@ public class ShowRestock extends HttpServlet {
 				rs = db.executeQuery(sql, params);
 				while(rs.next()){
 					JSONObject temp = new JSONObject();
-					temp.put("comname", rs.getString(1));
-					temp.put("staname", rs.getString(2));
-					temp.put("redate", rs.getDate(3));
-					temp.put("reamount", rs.getInt(4));
-					temp.put("reason", rs.getString(5));
+					temp.put("resno", rs.getInt(1));
+					temp.put("comname", rs.getString(2));
+					temp.put("staname", rs.getString(3));
+					temp.put("redate", rs.getDate(4));
+					temp.put("reamount", rs.getInt(5));
+					temp.put("reason", rs.getString(6));
 					js.put(temp);
 				}
 			}else{

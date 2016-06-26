@@ -36,11 +36,7 @@
                 </li>
 
                 <li class="uk-parent">
-                    <a href="#">商品销售管理</a>
-                    <ul class="uk-nav-sub">
-                        <li><a href="manacommess.html">查询销售记录</a></li>
-                        <li><a href="cusretock.html">顾客退货管理</a></li>
-                    </ul>
+                    <a href="manacommess.html">商品销售管理</a>
                 </li>
 
 
@@ -79,9 +75,9 @@
             </li>
             <li>
                 <div class="title7">
-                <input type="button" class="button" name="" id="altersure" onclick="sure311()" value="确定"/></div>
+                <input type="button" class="uk-button uk-button-primary uk-modal-close" name="" id="altersure"  value="确定"/></div>
                 <div class="title7">
-                <input type="button" class="button" name="cancel" onclick="display311()" value="取消"/></div>
+                <input type="button" class="uk-button uk-button-primary uk-modal-close" name="cancel"  value="取消"/></div>
             </li>
         </ul>
         </div>
@@ -100,9 +96,9 @@
                 </li>
                 <li>
                     <div class="title7">
-                        <input type="button" class="button" name="sure" id="insertsort" onclick="sure312()" value="确定"/></div>
+                        <input type="button" class="uk-button uk-button-primary uk-modal-close" name="sure" id="insertsort" value="确定"/></div>
                     <div class="title7">
-                        <input type="button" class="button" name="cancel" onclick="display312()" value="取消"/></div>
+                        <input type="button" class="uk-button uk-button-primary uk-modal-close" name="cancel"  value="取消"/></div>
                 </li>
             </ul>
         </div>
@@ -126,30 +122,30 @@
                 <ul class="title11">
                     <li>
                         <div class="title8">
-                            <input type="text" class="form-control" name="id_comno" id="id_comno2" />
+                            <input type="text" class="form-control" id="insertcomname" />
                         </div>
                     </li>
                     <li>
                         <div class="controls2">
-                            <select class="title2" name="id_sortno">
-                                <option>请选择</option>
-                                <option>小吃</option>
-                                <option>家具</option>
-                                <option>衣物</option>
-                                <option>玩具</option></select>
+                            <select class="title2" name="id_sortno" id="insertcomsort">
+                                <option value="0">请选择</option>
+                                <option value="1">食品</option>
+                                <option value="2">家具</option>
+                                <option value="3">衣物</option>
+                                <option value="4">玩具</option></select>
                         </div>
                     </li>
                     <li>
                         <div class="title2">
-                            <input type="text" class="form-control" name="id_price" id="id_price2" />
+                            <input type="text" class="form-control" name="id_price" id="insertcomprice" />
                         </div>
                     </li>
                 </ul>
             </div>
 
             <div class="uk-modal-footer">
-                <input type="button" class="button" id="sure" onclick="sure41()" value="确定"/>
-                <input type="button" class="button" id="cancel" onclick="display41()" value="取消"/>
+                <input type="button" class="uk-button uk-button-primary uk-modal-close" id="insertcom"  value="确定"/>
+                <input type="button" class="uk-button uk-button-primary uk-modal-close" id="cancel" value="取消"/>
             </div>
         </div>
     </div>
@@ -168,41 +164,41 @@
                 <li><label class="title2">商品单价</label></li>
             </ul>
         </div>
-        <div class="detailshow">
+        <!-- <div class="detailshow">
             <ul class="title11">
                 <li><label class="title8" id="id_comno1">越南挂耳式咖啡</label></li>
                 <li><label class="title2" id="id_sortno3">小吃</label></li>
                 <li><label class="title2" id="id_price1">68.00</label></li>
             </ul>
-        </div>
+        </div> -->
         <div class="detailchange">
             <ul class="title11">
                 <li>
                     <div class="title8">
-                        <input type="text" class="form-control" name="id_comno" id="id_comno2" />
+                        <input type="text" class="form-control" id="altercomname" />
                     </div>
                 </li>
                 <li>
                     <div class="controls2">
-                        <select class="title2" name="id_sortno">
-                            <option>请选择</option>
-                            <option>小吃</option>
-                            <option>家具</option>
-                            <option>衣物</option>
-                            <option>玩具</option></select>
+                        <select class="title2" name="id_sortno" id="altercomsort">
+                            <option value="0">请选择</option>
+                            <option value="1">食品</option>
+                            <option value="2">家具</option>
+                            <option value="3">衣物</option>
+                            <option value="4">玩具</option></select>
                     </div>
                 </li>
                 <li>
                     <div class="title2">
-                        <input type="text" class="form-control" name="id_price" id="id_price2" />
+                        <input type="text" class="form-control" name="id_price" id="alterprice" />
                     </div>
                 </li>
             </ul>
         </div>
 
         <div class="uk-modal-footer">
-            <input type="button" class="button" id="sure" onclick="sure42()" value="确定"/>
-            <input type="button" class="button" id="cancel" onclick="display42()" value="取消"/>
+            <input type="button" class="uk-button uk-button-primary uk-modal-close" name="" id="bcomno"  value="确定"/>
+            <input type="button" class="uk-button uk-button-primary uk-modal-close" id="cancel" value="取消"/>
         </div>
     </div>
     </div>
@@ -274,7 +270,7 @@
                             <li>
                                 <select class="title3" name="id_sortno" id="sortno">
                                     <option value="0">请选择</option>
-                                    <option value="1">小吃</option>
+                                    <option value="1">食品</option>
                                     <option value="2">家具</option>
                                     <option value="3">衣物</option>
                                     <option value="4">玩具</option></select>
@@ -303,7 +299,7 @@
                     </ul>
                     <!--查询结果-->
                     <div id="printlight">
-                    <ul class="title">
+                   <!--  <ul class="title">
                         <li><label class="title1" id="id_ccomno">10328372</label></li>
                         <li><label class="title4" id="id_ccomname">越南挂耳式咖啡</label></li>
                         <li><label class="title1" id="id_cprice">18.00</label></li>
@@ -312,7 +308,7 @@
                         <li><div class="title1"><input type="button" class="button" name="sure" data-uk-modal="{target:'#comesschange'}" value="修改"/>
                             <input type="button" class="button" name="delete" onclick="display3()" value="删除"/></div>
                         </li>
-                    </ul>
+                    </ul> -->
                     </div>
                 </div>
 			</li>

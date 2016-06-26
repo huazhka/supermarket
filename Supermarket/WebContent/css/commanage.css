@@ -51,7 +51,7 @@
 }
 .uk-modal-dialog {
 	background: #cedff6;
-	width: 600px;
+	width: 380px;
 }
 .limit{
 	background: #cedff6;
@@ -231,9 +231,10 @@
 	margin:30px auto;
 }
 .com_print{
-	width:630px;
-	height:auto;
+	width:650px;
+	height:400px;
 	margin:30px auto;
+	overflow:scroll;
 }
 	.form-control{
 		text-align:center;
@@ -289,4 +290,21 @@
 .button, input, select, textarea{
 	font-family: inherit;
 	line-height:20px;
+}
+.uk-button{
+    padding: 0px 8px;
+    color: #263f56;
+    border:1px solid #263f56;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition:0.5s all;
+    -webkit-transition:0.5s all;
+    -moz-transition:0.5s all;
+    -o-transition:0.5s all;
+    -ms-transition:0.5s all;
+}
+.uk-button:hover{
+    color: #FFF;
+    background-color:#39f;
 }

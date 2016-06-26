@@ -8,14 +8,13 @@ function sendSupplyEachRequest(name){
 	request.open("POST","http://localhost:8080/Supermarket/SupplyEach",true);
 	request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	request.onreadystatechange=parseSupplyEachRequest;
-//	alert("测试");
 	request.send("name="+name);
 }
 
 function parseSupplyEachRequest(){
 	
 	if(request.status==200&&request.readyState==4){
-		alert(request.responseText);
+//		alert(request.responseText);
 		
 		var supply_json=JSON.parse(request.responseText);
 		

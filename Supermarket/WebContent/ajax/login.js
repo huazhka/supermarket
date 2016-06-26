@@ -25,7 +25,7 @@ function CreateLoginParamter(){
 		identity=1;
 	else
 		identity=2;
-	alert("?username="+username+"&password="+password+"&identity="+identity);
+	//alert("?username="+username+"&password="+password+"&identity="+identity);
 	
 	return "username="+username+"&password="+password+"&identity="+identity;
 }
@@ -49,13 +49,13 @@ function parseLoginRequest(){
 
 	if(request.status==200&&request.readyState==4){
 		var login_msg=JSON.parse(request.responseText);
-		alert(login_msg.detail);
+		//alert(login_msg.detail);
 		var identity=document.getElementById("identitys").value;
-		alert(identity);
+		//alert(identity);
 		if(identity=="员工")
 			window.location.href="staff.html";
 		else
-			alert("管理员1");
+			window.location.href="manage.html";
 
 	}
 
