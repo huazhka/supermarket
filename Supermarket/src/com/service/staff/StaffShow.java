@@ -41,8 +41,8 @@ public class StaffShow extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		String username = "fzb";//session.getAttribute("account");
-		String password = "123";//session.getAttribute("pwd");
+		String username = (String)session.getAttribute("account");
+		String password = (String)session.getAttribute("pwd");
 		String all = request.getParameter("all");
 		String stano = request.getParameter("stano");
 		String account = request.getParameter("account");
