@@ -49,7 +49,7 @@ function ShowStaff(b){
 		dataType:"json",
 		success: function (data) {
 			if(data.status){
-				alert(data.detail);
+				//alert(data.detail);
 				var msg = data.message;
 				$("#id_dstaname").html(msg[0].name);
 				$("#id_daccount").html(msg[0].account);

@@ -49,13 +49,17 @@ function parseLoginRequest(){
 
 	if(request.status==200&&request.readyState==4){
 		var login_msg=JSON.parse(request.responseText);
-		//alert(login_msg.detail);
-		var identity=document.getElementById("identitys").value;
-		//alert(identity);
-		if(identity=="员工")
-			window.location.href="staff.html";
-		else
-			window.location.href="manage.html";
+		if(login_msg.status){
+			alert(login_msg.detail);
+			var identity=document.getElementById("identitys").value;
+			//alert(identity);
+			if(identity=="员工")
+				window.location.href="staff.html";
+			else
+				window.location.href="manage.html";
+		}else{
+			alert(login_msg.detail);
+		}
 
 	}
 

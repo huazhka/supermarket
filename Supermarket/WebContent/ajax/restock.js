@@ -66,7 +66,7 @@ $(function(){
 						"<li><label class='title2' >"+msg[i].comname+"</label></li>"+
 						"<li><label class='title1' >"+msg[i].staname+"</label></li>"+
 						"<li><label class='title1' >"+msg[i].reamount+"</label></li>"+
-						//"<li><input type='button' class='button' id='"+msg[i].resno+"' data-uk-modal='' value='详情' onclick='ShowDatail("+msg[i].resno+")'/></li>"+
+						"<li><input type='button' class='button' id='"+msg[i].resno+"' data-uk-modal='' value='详情' onclick='ShowDatail("+msg[i].resno+")'/></li>"+
 						"</ul><br>";
 						$("#showrestock").append(html);
 						$("#"+msg[i].resno).attr("data-uk-modal","{target:'#restockdetail'}");

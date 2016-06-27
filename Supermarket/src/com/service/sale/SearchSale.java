@@ -49,7 +49,8 @@ public class SearchSale extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		String stano = "2";// (String)session.getAttribute("stano");
+		int stno = (int)session.getAttribute("stano");
+		String stano = new String(""+stno);
 		String saleall = request.getParameter("saleall");
 		String saleno = request.getParameter("saleno");
 		String salecomno = request.getParameter("salecomno");

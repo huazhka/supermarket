@@ -51,7 +51,8 @@ public class InsertSale extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		String stano = "3";//(String)session.getAttribute("stano");
+		int stno = (int)session.getAttribute("stano");
+		String stano = ""+stno;
 		String comno = request.getParameter("comno");
 		Date currDate = (Date) Calendar.getInstance().getTime();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

@@ -53,7 +53,7 @@ public class InsertCom extends HttpServlet {
 		String comname = request.getParameter("comname");
 		String price = request.getParameter("price");
 		String sortno = request.getParameter("sortno");
-		//String supno = request.getParameter("supno");
+		String supname = request.getParameter("supname");
 		
 		String params[] = new String[]{comname,price,sortno};
 		

@@ -76,7 +76,8 @@ public class PswAlter extends HttpServlet {
 			if(n!=0){
 				status = true;
 				detail = new String("修改密码成功！");
-			
+				session.removeAttribute("pwd");
+				session.setAttribute("pwd", password);
 			}else{
 				detail = new String("修改密码失败！");
 			}

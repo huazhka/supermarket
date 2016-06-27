@@ -49,7 +49,7 @@ public class SearchCom extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
-		String account = "fzb";//(String)session.getAttribute("acconut");
+		String account = (String)session.getAttribute("acconut");
 		String all = (String)request.getParameter("all");
 		System.out.println("all:"+all);
 		String comno = (String)request.getParameter("comno");

@@ -55,16 +55,22 @@ $(function(){
 					alert(data.detail);
 					var msg = data.message;
 					for(i=0;i<msg.length;i++){
+						if(msg[i].wareamount==""){
+							msg[i].wareamount = 0;
+						}
 						  var html="<ul class='title'>"+
 						  	"<li><label class='title1' >"+msg[i].comno+"</label></li>"+
 					        "<li><label class='title4' >"+msg[i].comname+"</label></li>"+
 					        "<li><label class='title1' >"+Math.round(msg[i].price*100)/100+"</label></li>"+
 					        "<li><label class='title1' >"+msg[i].sortname+"</label></li>"+
-					        "<li><label class='title1' >"+msg[i].wareamount+"</label></li>" +
+					        "<li><label class='title1' id='ware"+msg[i].comno+"'>"+msg[i].wareamount+"</label></li>" +
 					        "<li><div class='title1'><input type='button' class='button' name='"+msg[i].comno+"' id='"+msg[i].comno+"' data-uk-modal='' value='修改' onclick='AlterCom(this)'/>"+
                             "<input type='button' class='button' name='"+msg[i].comno+"' onclick='DeleteCom(this)' value='删除'/></div></li></ul><br/>";
 						  $("#printlight").append(html);
 						  $("#"+msg[i].comno).attr("data-uk-modal","{target:'#comesschange'}");
+						  if(msg[i].wareamount<=10){
+							  $("#ware"+msg[i].comno).css('color','red');
+						  }
 					}
 				}else{
 					alert(data.detail);
@@ -114,7 +120,8 @@ $(function(){
 			data:{
 				comname:$("#insertcomname").val(),
 				price:$("#insertcomprice").val(),
-				sortno:$("#insertcomsort").val(),			
+				sortno:$("#insertcomsort").val(),
+				//supname:$("#insertsupply").val()
 			},
 			dataType:"json",
 			success: function (data) {

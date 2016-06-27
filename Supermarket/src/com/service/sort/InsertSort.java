@@ -65,13 +65,16 @@ public class InsertSort extends HttpServlet {
 			if(db.getConn()!=null){
 				System.out.println("连接成功！");
 			}
-			
-		sql = new String("INSERT INTO sort(sortname) VALUES(?)");
-		n = db.executeUpdate(sql, params);
-		if(n!=0){
-			status = true;
-			detail = new String("插入类别成功！");
-			
+		if(!sortname.equals("")){	
+			sql = new String("INSERT INTO sort(sortname) VALUES(?)");
+			n = db.executeUpdate(sql, params);
+			if(n!=0){
+				status = true;
+				detail = new String("插入类别成功！");
+				
+			}else{
+				detail = new String("插入类别失败！");
+			}
 		}else{
 			detail = new String("插入类别失败！");
 		}

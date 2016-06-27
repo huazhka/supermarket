@@ -53,7 +53,7 @@ public class Login extends HttpServlet {
 		System.out.println(username);
 		System.out.println(password);
 		System.out.println(identity);
-		String params[] = new String[]{username,password};
+		String params[] = new String[]{username,password,identity};
 		
 		DBO db = new DBO();
 		ResultSet rs = null;
@@ -69,7 +69,7 @@ public class Login extends HttpServlet {
 				System.out.println("连接成功！");
 			}
 			
-		sql = new String("SELECT * FROM staff WHERE account=? AND pwd=?");
+		sql = new String("SELECT * FROM staff WHERE account=? AND pwd=? AND identity=?");
 		rs = db.executeQuery(sql, params);
 		if(rs.next()){
 			status = true;

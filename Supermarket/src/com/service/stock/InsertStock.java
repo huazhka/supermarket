@@ -55,7 +55,8 @@ public class InsertStock extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
 		String comno = request.getParameter("comno");
-		String stano = "1";// request.getParameter("stano");
+		int stno = (int)session.getAttribute("stano");
+		String stano = ""+stno;
 		Date currDate = (Date) Calendar.getInstance().getTime();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String dateTime = sdf.format(currDate);
